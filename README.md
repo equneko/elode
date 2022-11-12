@@ -1,21 +1,37 @@
 
-# <img width="128" src="https://github.com/alfajriarraihan/elode/blob/main/logo.png"></img> Elode.js - An Unique Way Development
-**Elode** (Element Lode) is an unique javascript module/framework for creating **HTML Element (DOM)** built on top of HTML, CSS and Javascript.
-Based on ES5 (EcmaScript 2009) that support old web browser and also support with other javascript modules/frameworks
+# <img width="128" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - An Unique Way Web Development
+**Elode** (Element Lode) is an unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
+Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
- 
-- [Unique HTML Syntax](https://github.com/alfajriarraihan/elode#unique-html-syntax-)
-- [Creating Element](https://github.com/alfajriarraihan/elode#creating-element-)
-- [Building Component](https://github.com/alfajriarraihan/elode#building-component-)
-- [Reactivity Way](https://github.com/alfajriarraihan/elode#reactivity-way-)
+## ![code](https://img.icons8.com/material/21/source-code--v1.png) Unique
+Bring the unique HTML-like syntax type for templating web user interface. <br/>
+Write quickly, different and less code.
 
+## ![write](https://img.icons8.com/material/21/edit--v1.png) Declarative
+Using element and component for UI/UX front-end development. <br/>
+And it's comes natural from HTML-DOM.
+
+## ![bulb](https://img.icons8.com/material/21/light--v2.png) Lightweight
+Based on Javascript ES5 that can support old web browser, <br/>
+safe size for your storage and also good for a low-device.
+
+## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
  ![Edge](https://img.icons8.com/color/128/ms-edge-new.png)
+ ![Firefox](https://img.icons8.com/external-tal-revivo-color-tal-revivo/128/external-firefox-a-free-and-open-source-web-browser-developed-by-the-mozilla-foundation-logo-color-tal-revivo.png)
+ ![Edge](https://img.icons8.com/color/128/internet-explorer.png)
  ![Android Webview](https://img.icons8.com/color/128/android-os.png)
- ![HTML](https://img.icons8.com/fluency/128/html-5.png)
- ![CSS](https://img.icons8.com/fluency/128/css3.png)
- ![Javascript](https://img.icons8.com/fluency/128/javascript.png)
-
+ 
+ - Chrome (Full Supported v90+)
+ - Edge (Not Really Support)
+ - Firefox (Stable Version 5.0+)
+ - Internet Explorer (IE9+ / IE11 Stable)
+ - Android WebBrowser (v4.4+ / v5.0 Stable)
+ - Opera, Safari and IOS WebBrowser (Not Tested)
+ 
+## Library Compabilities
+- jQuery v2.2.0 (Tested)
+ 
 ## Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
 **Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in an unique way!<br/>
 it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax
