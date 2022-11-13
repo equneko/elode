@@ -54,7 +54,7 @@ Elode("h1#title.white.bg-dark Im White and Dark-Background").render();
 Here's basic example of **Elode** to creating HTML Element in javascript code with the unique query syntax type like HTML
 ```javascript
 //HTML Element (DOM)
-var NavBar = Elode(`div
+var NavBar = Elode(`div 
   <h1 Your Website Title>
   <p Your Website Description>`);
   
