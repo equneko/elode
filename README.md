@@ -5,18 +5,6 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
 
 ![Elode.js](https://github.com/equneko/elode/blob/main/res/images/homepage.jpg)
 
-## ![code](https://img.icons8.com/material/21/source-code--v1.png) Unique
-Bring the unique HTML-like syntax type for templating web user interface. <br/>
-Write quickly, different and less code.
-
-## ![write](https://img.icons8.com/material/21/edit--v1.png) Declarative
-Using element and component for UI/UX front-end development. <br/>
-And it's comes natural from HTML-DOM.
-
-## ![bulb](https://img.icons8.com/material/21/light--v2.png) Lightweight
-Based on Javascript ES5 that can support old web browser, <br/>
-safe size for your storage and also good for a low-device.
-
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
  ![Edge](https://img.icons8.com/color/128/ms-edge-new.png)
