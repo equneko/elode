@@ -28,14 +28,12 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
  - Opera, Safari and IOS WebBrowser (Not Tested)
  
 ## Library Compabilities
-- jQuery v2.2.0 (Tested)
-- Highlight.js (Tested)
-- Paper.js (Not Full Tested)
+- jquery (Tested)
+- highlight.js (Tested)
 
 ## Framework Compabilities
-- W3.css (Tested)
-- UIKit.css (Not Full Tested)
- 
+- w3.css (Tested)
+
 ## Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
 **Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in an unique way!<br/>
 it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax
