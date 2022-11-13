@@ -23,7 +23,7 @@ function CodeView(data){
         "  <span.grey(!) <span.fa.fa-folder> (../"+data.dir+")>"+
         "<a[href #|style float:right].grey <span.fa.fa-copy>>",
         "code[style padding:16px 32px;height:"+data.height+"].small.bg-dark.white.card.left."+data.lang,
-        "p#result.bg-indigo.white.small.px-8[style font-family:sans-serif] <span.fa.fa-globe> <b  Result>",
+        "p#result.bg-violet.white.small.px-8[style font-family:sans-serif] <span.fa.fa-globe> <b  Result>",
         "#view.ctr.b-dark.[style font-family:sans-serif; font-size:0.5em]"
         ],{
             onCreate:function(){
