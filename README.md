@@ -74,7 +74,7 @@ As long as an element based, we're going to component, that have more complex to
 //Creating Root Element for Building Component
 var App = Elode([
   "#app.container",
-  "h1 {{app.title}}"
+  "h1 {{app.title}}",
   "p {{app.subtitle}}"
 ],{
   app:{
