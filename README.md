@@ -5,6 +5,14 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
 
 ![Elode.js](https://github.com/equneko/elode/blob/main/res/images/homepage.jpg)
 
+## Install
+- Download Release Versions
+- Using CDN JSDelivr:
+```xml
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.0/elode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.0/elode.min.js"></script>
+```
+
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
  ![Edge](https://img.icons8.com/color/128/ms-edge-new.png)
