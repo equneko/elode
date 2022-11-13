@@ -33,6 +33,12 @@ safe size for your storage and also good for a low-device.
  
 ## Library Compabilities
 - jQuery v2.2.0 (Tested)
+- Highlight.js (Tested)
+- Paper.js (Not Full Tested)
+
+## Framework Compabilities
+- W3.css (Tested)
+- UIKit.css (Not Full Tested)
  
 ## Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
 **Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in an unique way!<br/>
