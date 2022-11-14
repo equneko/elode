@@ -28,7 +28,7 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
  - Opera, Safari and IOS WebBrowser (Not Tested)
  
 ## Library Compabilities
-- jquery (Tested)
+- jQuery (Tested)
 - highlight.js (Tested)
 
 ## Framework Compabilities
@@ -52,7 +52,7 @@ Elode("h1#title.white.bg-dark Im White and Dark-Background").render();
 Here's basic example of **Elode** to creating HTML Element in javascript code with the unique query syntax type like HTML
 ```javascript
 //HTML Element (DOM)
-var NavBar = Elode(`div 
+var NavBar = Elode(`nav 
   <h1 Your Website Title>
   <p Your Website Description>`);
   
@@ -120,7 +120,6 @@ So, where to start? well, let's view this actions below. You can choice to start
 
 - [Get Started](https://github.com/alfajriarraihan/elode/documentation/get-started.md)
 - [Read Documentation](https://github.com/alfajriarraihan/elode/documentation/)
-- [Create Chat Application](https://github.com/alfajriarraihan/elode/tutorial/chat-application.md)
 
 # Icon Resources By [Icons8](https://icons8.com)
 All embedded icon resources in this repository are platformed by Icons8.com <br/>
