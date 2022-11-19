@@ -21,8 +21,8 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
  ![Android Webview](https://img.icons8.com/color/128/android-os.png)
  
  - Chrome (Full Supported v90+)
- - Edge (Not Really Support)
- - Firefox (Stable Version 5.0+)
+ - Edge (Latest Version)
+ - Firefox (Not Really Support)
  - Internet Explorer (IE9+ / IE11 Stable)
  - Android WebBrowser (v4.4+ / v5.0 Stable)
  - Opera, Safari and IOS WebBrowser (Not Tested)
@@ -42,10 +42,10 @@ Elode("h1 Hello World").render();
 //result: <h1>Hello World</h1>
 
 Elode("h1.blue This Will Be Blue").render(); 
-//result: <h1 class="red">This Will Be Red</h1>
+//result: <h1 class="blue">This Will Be Red</h1>
 
 Elode("h1#title.white.bg-dark Im White and Dark-Background").render(); 
-//result: <h1 id="title" class="red border">Im Red and Bordered</h1>
+//result: <h1 id="title" class="white bg-dark">Im Red and Bordered</h1>
 ```
 
 ## Creating Element ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
@@ -122,7 +122,7 @@ So, where to start? well, let's view this actions below. You can choice to start
 - [Read Documentation](https://github.com/alfajriarraihan/elode/documentation/)
 
 # Icon Resources By [Icons8](https://icons8.com)
-All embedded icon resources in this repository are platformed by Icons8.com <br/>
+All embedded icon resources in this repository are platformed by **Icons8.com** <br/>
 Except the one, that's official **Elode.js** icon by the Author <br/>
 ![Icons8](https://img.icons8.com/color/256/icons8-new-logo.png)
 
