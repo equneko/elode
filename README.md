@@ -9,8 +9,9 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
 - Download Release Versions
 - Using CDN JSDelivr:
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.0/elode.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.0/elode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.lite.js"></script>
 ```
 
 ## Browser Compabilities
