@@ -3,6 +3,10 @@
 **Elode** (Element Lode) is an unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
+## Elode.js Lite (Lightweight-Edition)
+**Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
+Now you can make a simple and minimalist web application using the **Lite Version!**
+
 ![Elode.js](https://github.com/equneko/elode/blob/main/res/images/homepage.jpg)
 
 ## Install
