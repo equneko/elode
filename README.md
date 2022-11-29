@@ -1,6 +1,6 @@
 
-# <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - An Unique Way Web Development
-**Elode** (Element Lode) is an unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
+# <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
+**Elode** (Element Lode) is a unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
 ## Elode.js Lite (Lightweight-Edition)
@@ -13,10 +13,13 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 - Download Release Versions
 - Using CDN JSDelivr:
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.1/elode.lite.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.lite.js"></script>
 ```
+
+## Playground
+Try Elode.js (online) with JS Fiddle! https://jsfiddle.net/equneko/ocef7tsv/
 
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
@@ -25,9 +28,9 @@ Now you can make a simple and minimalist web application using the **Lite Versio
  ![Edge](https://img.icons8.com/color/128/internet-explorer.png)
  ![Android Webview](https://img.icons8.com/color/128/android-os.png)
  
- - Chrome (Full Supported v90+)
+ - Chrome (Full Supported v78+)
  - Edge (Latest Version)
- - Firefox (Not Really Support)
+ - Firefox (Latest Version)
  - Internet Explorer (IE9+ / IE11 Stable)
  - Android WebBrowser (v4.4+ / v5.0 Stable)
  - Opera, Safari and IOS WebBrowser (Not Tested)
