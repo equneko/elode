@@ -306,7 +306,8 @@
             .substring(1,_rereact_(c[i]).length-1);
 			a = a.replace(c[i],r.hash+i);
 		}
-		el = _element_(a,b);
+
+		el = _element_(_rereact_(a),b);
 		if(el.id=="elode_error")return el;
         el.elodeQuery = A; 
         if(el.elodeProperty!=null)
@@ -606,7 +607,7 @@
     /* Error Logging Management */
     function _error_(err){ var str = "ELODE_ERROR \""+err+"\"",
         el = _win.Elode('div#elode_error() '+str); console.log(str);
-        el._attr("style","color:red;background-color:black;padding:16px");
+        el.attr("style","color:red;background-color:black;padding:16px");
         return el;
     }
 
