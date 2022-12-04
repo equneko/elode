@@ -17,7 +17,9 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 ```
 
 ## Playground
-Try Elode.js (online) with JS Fiddle! https://jsfiddle.net/equneko/5e8u0a3r
+Try Elode.js (online) with 
+- CodePen.io https://codepen.io/equneko/pen/bGKQMBj
+- JS Fiddle! https://jsfiddle.net/equneko/5e8u0a3r
 
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
