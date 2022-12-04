@@ -12,7 +12,11 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 - Using CDN JSDelivr:
 ```xml
 <script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.js"></script>
+```
+```xml
 <script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.min.js"></script>
+```
+```xml
 <script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.2/elode.lite.js"></script>
 ```
 
