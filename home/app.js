@@ -1,1 +1,0 @@
-var _ = Elode, App = _("#app").render();
