@@ -11,19 +11,17 @@
     <link rel="stylesheet" href="home/app.css">
     <link rel="stylesheet" href="res/module/font-awesome.css">
     <link rel="stylesheet" href="res/module/monokai-sublime.min.css">
-    <script src="src/v1.0/elode.js"></script>
+    <script src="src/v1.2/elode.min.js"></script>
     <script src="res/module/highlight.min.js"></script>
     <script src="res/module/javascript.min.js"></script>
     <script src="res/module/xml.min.js"></script>
 </head>
 <body>
+    <script>
+        var _ = Elode, App = _("#app").render();
+    </script>
     <script src="home/component.js"></script>
-    <script src="home/app.js"></script>
     <script src="home/welcome.js"></script>
     <script src="home/content.js"></script>
-    <!-- <script src="app.js"></script> -->
-    <script>
-        hljs.highlightAll();
-    </script>
 </body>
 </html> 

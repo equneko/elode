@@ -1,0 +1,248 @@
+#jumbotron{
+    font-size:2em;
+}
+#navbar{
+    padding:1em 3em;
+}
+.content{
+    width:40%; 
+    padding-bottom:1.7em
+}
+#bars{
+    display:none;
+}
+#post-card{
+    width:100%;
+    height:15.5em;
+    display:flex;
+    position:relative;
+    justify-content: center;
+}
+#post-card > img{
+    width:100%;
+    height:15.5em;
+    position:absolute;
+    object-fit:cover;
+    filter:brightness(21%);
+}
+#post-card #content{
+    position: absolute;
+}
+@media (max-width:1256px){
+    #content{
+        width:90%!important;
+    }
+    .content h2{
+        font-size:1.1em;
+    }
+    .content p{
+        font-size:0.7em;
+    }
+}
+
+@media (max-width:921px){
+    #content{
+        width:100%!important;
+    }
+}
+
+@media (max-width:800px){
+    #jumbotron h1{
+        font-size:1.7em;
+    }
+    #jumbotron p{
+        padding: 0 1em;
+        font-size:0.5em;
+    }
+    #content{
+        display:block;
+        text-align:center!important;
+        padding-bottom: 2em;
+    }
+    .content{
+        display: block;
+        margin: auto;
+        margin-top:1em;
+        width:80%;
+    }
+    #post-card{
+        height:30em;
+    }
+    #post-card > img{
+        height:30em;
+    }
+}
+
+@media (max-width:770px){
+    #navbar{
+        text-align: center;
+    }
+    #navbar div{
+        display:block;
+        text-align: center;
+        float:none!important;
+        margin:8px 0;    
+    }
+}
+
+@media (max-width:700px){
+    #jumbotron{
+        padding:0 1em;
+    }
+    .content h2{
+        font-size:1em;
+    }
+    .content p{
+        font-size:0.67em;
+    }
+}
+
+@media (max-width:582px){
+    #menu{
+        display:none!important;
+    }
+    #bars{
+        display:inline-block!important;
+    }
+}
+
+@media (max-width:500px){
+    #jumbotron h1{
+        font-size:1.2em;
+    }
+    #jumbotron p{
+        padding: 0 3em;
+        font-size:0.4em;
+    }
+    #getstarted > a{
+        display:block;
+        font-size:0.4em;
+    }
+    .content{
+        width:90%;
+    }
+    #post-card{
+        height:33em;
+    }
+    #post-card > img{
+        height:33em;
+    }
+}
+
+@media (max-width:425px){
+    .content h2{
+        font-size:0.9em;
+    }
+    .content p{
+        font-size:0.64em;
+    }
+}
+
+@media (max-width:385px){
+    #jumbotron h1{
+        font-size:1em;
+    }
+    #post-card{
+        height:34em;
+    }
+    #post-card > img{
+        height:34em;
+    }
+}
+@media (max-width:343px){
+    #install{ display: none; }
+}
+@media (max-width:320px){
+    #jumbotron h1{
+        font-size:0.8em;
+    }
+}
+
+@media (max-width:300px){
+    #content{
+        padding:0.5em 1em;
+    }
+    .content{
+        width:100%;
+    }
+}
+
+@media (max-width:271px){
+    #jumbotron{
+        padding:0.2em 0.7em;
+    }
+    #title{
+        font-size:0.9em;
+    }
+    #bars{
+        font-size:1em;
+    }
+}
+
+@media (max-width:255px){
+    body{
+        font-size:0.8em;
+    }
+    #post-card{
+        height:42em;
+    }
+    #post-card > img{
+        height:42em;
+    }
+}
+
+@media (max-width:234px){
+    #navbar{
+        padding:0.5em 1em;
+    }
+}
+
+@media (max-width:201px){
+    #navbar{
+        padding:0.5em 1em;
+    }
+    #jumbotron h1{
+        font-size:0.7em;
+    }
+    .content h2{
+        font-size:0.7em;
+    }
+    .content p{
+        font-size:0.5em;
+    }
+}
+
+@media (max-width:182px){
+    body{
+        font-size:0.5em;
+    }
+    .content{
+        font-size:1.3em;
+        padding: 4px 8px;
+    }
+    #title{
+        display:none;
+    }
+    #post-card{
+        height:25em;
+    }
+    #post-card > img{
+        height:25em;
+    }
+}
+
+@media (max-width:121px){
+    body{
+        font-size:0.3em;
+    }
+    .content{
+        font-size:1em;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width:99px){
+    body{
+        display:none;
+    }
+}
