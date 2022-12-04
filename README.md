@@ -7,8 +7,6 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
 **Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
 Now you can make a simple and minimalist web application using the **Lite Version!**
 
-![Elode.js](https://github.com/equneko/elode/blob/main/res/images/homepage.jpg)
-
 ## Install
 - Download Release Versions
 - Using CDN JSDelivr:
@@ -19,7 +17,7 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 ```
 
 ## Playground
-Try Elode.js (online) with JS Fiddle! https://jsfiddle.net/equneko/ocef7tsv/
+Try Elode.js (online) with JS Fiddle! https://jsfiddle.net/equneko/5e8u0a3r
 
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
