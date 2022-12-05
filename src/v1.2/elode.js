@@ -592,7 +592,7 @@
         }else{
            t = b[i];
         }
-        e.appendChild(t); t.root = e;
+        t.render(e); t.root = e;
         _property_(t); t.react();
         k += '<'+t.elodeQuery+'>';
       }
