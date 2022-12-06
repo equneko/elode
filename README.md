@@ -76,7 +76,7 @@ All elements can be reactive! if you add an event listener to your element. For 
 <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/example4.png"></img>
 
 # What's The Next?
-How about to using **Elode.js** now? First, you need to learn more about this module/frameworks!
+How about to using **Elode.js** now? First, you need to learn more about this library!
 So, where to start? well, let's view this actions below. You can choice to start from:
 
 - [Get Started](https://github.com/alfajriarraihan/elode/documentation/)
