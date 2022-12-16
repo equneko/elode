@@ -1,5 +1,5 @@
 /* 
-    Elode.js (Source) - v1.3 (Release: 16-12-2022) 
+    Elode.js (Source) - v1.3 (Release: 17-12-2022) 
     ~ A unique javascript library for creating HTML element ~
 
     [OpenSource Project - Under The MIT License] 
