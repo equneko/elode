@@ -119,22 +119,21 @@ var Elode = window.Elode;
         return {str:a.trim().substring(i),len:j};
     }
     //Elode Transform for reactive expression
-    function elode_react($,x){
+    function elode_react($){
         try{ //Fix IE < 9 (Object failed)
-            if($.constructor=="function Text() { [native code] }")$.elodeBase = $.textContent;
+            if($.constructor=="function Text() { [native code] }"){$.elodeBase = $.textContent;}
             //FIXED BUG FOR REACTIVE SYNTAX CASE
-            else $.elodeBase = $.innerHTML.split('&gt;').join('>')
-            .split('&lt;').join('<').split('&amp;').join('&');
-            if(x!=null)$.elodeBase = x;
+            else{ $.elodeBase = $.innerHTML.split('&gt;').join('>')
+            .split('&lt;').join('<').split('&amp;').join('&'); }
+
+            var xc = $.childNodes, i;
+            if (xc != null) {
+                for (i = 0; i < xc.length; i++) {
+                    elode_react(xc[i]);
+                }
+            }
         }catch(err){
             console.log(err);
-        }
-        var xc = $.childNodes, i;
-        if(xc!=null&&xc.length>0){
-           for(i = 0; i < xc.length; i++){
-              elode_react(xc[i],x);
-              _property_(xc[i]); //FIXED NOT ALL ADAPTED ELODE FUNCTIONS
-           }
         }
      }
      //Elode Property for managing properties
@@ -329,10 +328,16 @@ var Elode = window.Elode;
     function _react_($el){
         function evaluate(a){
             if(a.elodeBase==null)return null;
-            var r = _SBA_(a.elodeBase,'{,}'), i,j,e,v,js,x;
+            var r = _SBA_(a.elodeBase,'{,}'), i,j,e,v,V,t,js,x;
             if(r!=null){ x = a.elodeBase;
                 for(i = 0; i < r.length; i++){
                     v = r[i].substring(1,r[i].length-1);
+                    V = v.split(' ')[0].trim();
+                    if(V[0]=='$'){
+                        if(a.getAttribute("ref")==null){
+                            a.setAttribute("ref","");
+                        }
+                    }
                     js = _SBA_(v,'{,}');
                     if(js!=null){ 
                         for(j = 0; j < js.length; j++){
@@ -742,13 +747,20 @@ var Elode = window.Elode;
     };
     /* Elode Ref - Reference for Reactive Global Variable  */
     _win.Elode.ref = function(vars){
-        var i,v,e; for(i in vars){
-            v = vars[i];
-            e = _win.Elode("span."+i+" "+v);
-            _win.eval("var _"+i+" = '"+e.html()+"';");
-            _win.eval("function "+i+
-            "(value){ var i, els = document.querySelectorAll('."+i+"');"+
-            "for(i = 0; i < els.length; i++){els[i].innerText = value;}"+" }");
+        var i,v,F; 
+        for(i in vars){
+            v = vars[i]; 
+            _win["$"+i] = v;
+            F =" function _name_(value){"+
+             "var x, e = _i; "+
+             "if(typeof e == 'object'){ "+
+                 "for(x in value){_i[x] = value[x];} "+
+             "}else{_i = value;} "+
+             "var I, E = document.querySelectorAll('[ref]'); "+
+             "for(I = 0; I < E.length; I++){E[I].react();} "+
+            "};";
+            _win.eval(F.split('_name_').
+            join(i).split('_i').join("$"+i));
         }
     };
     /* Elode Render - Rendering Arguments of Elode Element */
