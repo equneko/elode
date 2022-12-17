@@ -51,7 +51,7 @@ Try Elode.js (online) with
 - w3.css (Tested)
 
 # Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
-**Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in an unique way!<br/>
+**Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in a unique way!<br/>
 it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax
 
 ### Try It https://codepen.io/equneko/pen/NWzoGEj
