@@ -730,14 +730,18 @@ var Elode = window.Elode;
             }
             return;
         }
-        if(there(tags,"as")){
-            tags = tags.split("as");
-            html = tags[0].trim(); tags = tags[1].trim();
+        if(typeof tags != 'string'){
+            for(i in tags){
+                setUse(i,tags[i]);
+            }
+            return;
         }else{
             html = tags;
+        } setUse(tags,html);
+        function setUse(x,y){
+            _win.eval("function "+x+"(html,prop){"+
+            "return Elode('"+y+" '+html,prop);}");
         }
-        _win.eval("function "+tags+"(html,prop){"+
-            "return Elode('"+html+" '+html,prop);}");
     };
     /* Elode Ref - Reference for Reactive Global Variable  */
     _win.Elode.ref = function(vars){
@@ -765,5 +769,9 @@ var Elode = window.Elode;
             nodes.render();
         }
     };
+
+    /* Elode Common - Extra Properties */
+    _win.Elode.VERSION = '1.3';
+    _win.Elode.CODE = 1317122022;
 
 })(document,window); //END - Elode.js
