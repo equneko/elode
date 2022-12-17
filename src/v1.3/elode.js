@@ -356,12 +356,7 @@ var Elode = window.Elode;
                 }
                 
                 if(a.constructor=="function Text() { [native code] }"){
-                    if(a.parentElement.childNodes>1){
-                        if(x!=a.parentElement.innerHTML) 
-                            a.parentElement.innerHTML = x;
-                    }else{
-                        if(x!=a.textContent) a.textContent = x;
-                    }
+                    if(x!=a.textContent) a.textContent = x;
                 }else{
                     if(x!=a.innerHTML) a.innerHTML = x;
                 }
@@ -369,10 +364,12 @@ var Elode = window.Elode;
         }
         if($el.elodeBase!=null){//Check if react's valid
             var ch = $el.childNodes, i;
-            if(ch!=null && ch.length > 0){
+            if(ch!=null && ch.length > 1){
                 for(i = 0; i < ch.length; i++){
                     evaluate(ch[i]);
                 }
+            }else{
+                evaluate($el);
             }
         }
     }
