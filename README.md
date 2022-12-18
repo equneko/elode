@@ -24,8 +24,8 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 
 ## Playground
 Try Elode.js (online) with 
-- CodePen.io https://codepen.io/equneko/pen/zYLOMjV
-- JS Fiddle! https://jsfiddle.net/equneko/5e8u0a3r
+- CodePen.io https://codepen.io/equneko/pen/zYLOMjV (v1.2)
+- JS Fiddle! https://jsfiddle.net/equneko/c9jnu6ma/ (v1.3)
 
 <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img>
 
