@@ -55,25 +55,88 @@ Try Elode.js (online) with
 it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax
 
 ### Try It https://codepen.io/equneko/pen/NWzoGEj
-<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/example1.png"></img>
+```javascript
+Elode("h1 Hello World").render(); 
+//result: <h1>Hello World</h1>
+
+Elode("h1.blue This Will Be Blue").render(); 
+//result: <h1 class="blue">This Will Be Blue</h1>
+
+Elode("h1#title.white.bg-dark Im White and Dark-Background").render(); 
+//result: <h1 id="title" class="red border">Im Red and Bordered</h1>
+```
 
 # Creating Element ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
 Here's basic example of **Elode** to creating HTML Element in javascript code with the unique query syntax type like HTML
 
 ### Try It https://codepen.io/equneko/pen/bGKzVJW
-<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/example2.png"></img>
+```javascript
+//HTML Element (DOM)
+var NavBar = Elode(`nav 
+  <h1 Your Website Title>
+  <p Your Website Description>`);
+  
+NavBar.render(); //Rendering Element to <body></body>
+```
+Result:
+```html
+<div>
+  <h1>Your Website Title</h1>
+  <p>Your Website Description</p>
+</div>
+```
 
 # Building Component ![Component](https://img.icons8.com/color/48/web-components.png)
 As long as an element based, we're going to component, that have more complex to build web interfaces with the properties
 
 ### Try It https://codepen.io/equneko/pen/gOKqaNw
-<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/example3.png"></img>
+```javascript
+//Creating Root Element for Building Component
+var App = Elode([
+  "#app.container",
+  "h1 {{app.title}}",
+  "p {{app.subtitle}}"
+],{
+  app:{
+    title:"My App",
+    subtitle:"Built in Elode.js"
+  }
+}).render();
+
+//Rendering Button to App
+var GetStarted = Elode(
+"button.btn.medium Getting Started",{
+   onclick:function(){
+     alert("Welcome to Elode.js bro!");
+   }
+//Rendering to root. You can using like this too ".render(App);"
+}).render("#app"); 
+```
+Result:
+```html
+<div id="app" class="container">
+  <h1>My App</h1>
+  <p>Built in Elode.js</p>
+  <button class="btn medium">Getting Started</button>
+</div>
+```
 
 # Reactivity ![Reactive](https://img.icons8.com/color/32/swap.png)
 All elements can be reactive! if you add an event listener to your element. For example onclick:function(){}
 
 ### Try It https://codepen.io/equneko/pen/yLEZYmj
-<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/example4.png"></img>
+```javascript
+Elode("button You Count {{count}}",{
+  count:0,
+  onclick:function(){
+    this.count++;
+  }
+}).render();
+```
+Result:
+```html
+<button>You Count 0</button>
+```
 
 # What's The Next?
 How about to using **Elode.js** now? First, you need to learn more about this library!
