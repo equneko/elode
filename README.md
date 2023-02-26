@@ -62,8 +62,8 @@ Elode("h1 Hello World").render();
 Elode("h1.blue This Will Be Blue").render(); 
 //result: <h1 class="blue">This Will Be Blue</h1>
 
-Elode("h1#title.white.bg-dark Im White and Dark-Background").render(); 
-//result: <h1 id="title" class="red border">Im Red and Bordered</h1>
+Elode("h1#title.white.bg-dark Im White and Dark Background").render(); 
+//result: <h1 id="title" class="white bg-dark">Im White and Dark Background</h1>
 ```
 
 # Creating Element ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
