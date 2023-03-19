@@ -22,7 +22,7 @@ _([".left.inline",
 
 _(["#jumbotron.ctr.center.dark",
 "h1.mx-8 A <span.violet Unique> Way <br#side> Web <span.fa.fa-code> Development",
-"p.medium.grey <b Creating>, Composing and Rendering <b HTML Element> in An Unique Way!",
+"p.medium.grey <b Creating>, Composing and Rendering <b HTML Element> in A Unique Way!",
 _(["#getstarted.center.mx-16",
     "a[href #].bold.btn.rds.small.d-hover.bg-violet.mx-8 <span.fa.fa-play> Get Started",
     "a[href #].bold.btn.rds.small.mx-8 <span.fa.fa-download> Download",
