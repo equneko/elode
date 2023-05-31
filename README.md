@@ -1,6 +1,6 @@
 
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
-**Elode** (Element Lode) is a unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
+**Elode** (Element Lode / Experimental Objective Development) is a unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
 <img src="https://github.com/equneko/elode/blob/main/res/images/elode home.PNG"></img>
