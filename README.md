@@ -44,11 +44,15 @@ Try Elode.js (online) with
  - Opera, Safari and IOS WebBrowser (Not Tested)
  
 ## Library Compabilities
-- jQuery (Tested)
-- highlight.js (Tested)
+![jQuery](https://img.icons8.com/?size=128&id=40253&format=png)
+<img width="128" src="https://avatars.githubusercontent.com/u/9039821?s=200&v=4"></img>
+- jQuery (Tested) https://jquery.com
+- highlight.js (Tested) https://highlightjs.org/
 
 ## Framework Compabilities
-- w3.css (Tested)
+
+<img width="128" src="https://yt3.googleusercontent.com/dW6to0x5Crmeh7yi-YPLcQRqVrBtx2BSh8eoKTJbE8NbjloQ0sqlmdszIlxokJU_97-ndOt_=s900-c-k-c0x00ffffff-no-rj"></img>
+- w3.css (Tested) https://www.w3schools.com/w3css/defaulT.asp
 
 # Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
 **Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in a unique way!<br/>
