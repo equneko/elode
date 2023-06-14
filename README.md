@@ -45,7 +45,7 @@ Try Elode.js (online) with
  
 ## Library Compabilities
 ![jQuery](https://img.icons8.com/?size=128&id=40253&format=png)
-<img width="128" src="https://avatars.githubusercontent.com/u/9039821?s=200&v=4"></img>
+<img width="128" src="https://avatars.githubusercontent.com/u/9039821"></img>
 - jQuery (Tested) https://jquery.com
 - highlight.js (Tested) https://highlightjs.org/
 
@@ -148,7 +148,7 @@ So, where to start? well, let's view this actions below. You can choice to start
 
 - [Get Started](https://github.com/equneko/elode/blob/main/docs/get-started.md)
 - [Read Documentation](https://github.com/equneko/elode/tree/main/docs)
-- [Learn Examples](https://github.com/equneko/elode/tree/main/example)
+- [Learn Example](https://github.com/equneko/elode/tree/main/example)
 
 # Icon Resources By [Icons8](https://icons8.com)
 All embedded icon resources in this repository are platformed by **Icons8.com** <br/>
