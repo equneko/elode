@@ -3,7 +3,7 @@
 **Elode** (Element Lode / Experimental Objective Development) is a unique javascript library for creating, composing and rendering **HTML Element (DOM)**.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
-<img src="https://github.com/equneko/elode/blob/main/res/images/elode home.PNG"></img>
+<img width="800" src="https://github.com/equneko/elode/blob/main/res/images/brand.png"></img>
 
 ## Elode.js Lite (Lightweight-Edition)
 **Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
@@ -13,7 +13,7 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 - Download Release Versions
 - Using CDN JSDelivr:
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.3/elode.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.js"></script>
 ```
 ```xml
 <script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v1.3/elode.min.js"></script>
@@ -24,7 +24,7 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 
 ## Playground
 Try Elode.js (online) with 
-- CodePen.io https://codepen.io/equneko/pen/zYLOMjV (v1.2)
+- CodePen.io https://codepen.io/equneko/pen/BaGobLa/ (v2.0)
 - JS Fiddle! https://jsfiddle.net/equneko/c9jnu6ma/ (v1.3)
 
 <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img>
