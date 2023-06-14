@@ -142,8 +142,9 @@ Result:
 How about to using **Elode.js** now? First, you need to learn more about this library!
 So, where to start? well, let's view this actions below. You can choice to start from:
 
-- [Get Started](https://github.com/alfajriarraihan/elode/documentation/)
-- [Read Documentation](https://github.com/alfajriarraihan/elode/documentation/)
+- [Get Started](https://github.com/equneko/elode/blob/main/docs/get-started.md)
+- [Read Documentation](https://github.com/equneko/elode/tree/main/docs)
+- [Learn Examples](https://github.com/equneko/elode/tree/main/example)
 
 # Icon Resources By [Icons8](https://icons8.com)
 All embedded icon resources in this repository are platformed by **Icons8.com** <br/>
