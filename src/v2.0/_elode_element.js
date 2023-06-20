@@ -269,9 +269,9 @@ function _element_(query, property) {
                                 // Elode Reactive Procedure
                                 this.react();
 
-                                // Elode Reactive Callback, check if there's onReact(callback)
-                                if (this.onReact != null && this.
-                                    onReact.constructor == Function) { this.onReact(); } // using onReact(){ ... } to ElodeLifecycle
+                                // Elode Reactive Procedure for Root
+                                if(this.root!=null) this.root.react();
+
                             }
                         );
 
@@ -282,8 +282,8 @@ function _element_(query, property) {
                                     but the different's just attachEvent */
                                 this.react();
 
-                                if (this.onReact != null && this.
-                                    onReact.constructor == Function) { this.onReact(); }
+                                // Elode Reactive Procedure for Root
+                                if(this.root!=null) this.root.react();
                             }
                         );
                     }

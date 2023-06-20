@@ -13,18 +13,18 @@ function _react_(element) {
     /* 
         @evaluate - function to make evaluation of reactive elements
         actually, this is core function to do reactivity case
-
+ 
         @param
         - target: HTMLElement that has react case
-
+ 
         @return void
     */
     function evaluate(target) {
         // Check: if @param target.elodeBase not null (required)
         if (target.elodeBase == null) return null;
 
-            // @var r (array), react target from elodeBase of HTMLElement
-        var r = SymbolBetweenAlgorithm(target.elodeBase, '{,}'), 
+        // @var r (array), react target from elodeBase of HTMLElement
+        var r = SymbolBetweenAlgorithm(target.elodeBase, '{,}'),
             i, // @var i (number), for loop
             j, // @var j (number), for loop
             e, // @var e (string), evaluated reactive value
@@ -60,33 +60,40 @@ function _react_(element) {
 
                 // Check: required @var db if null not executed
                 if (db != null) {
+
                     // Execution: for loop to do split by {{}} database reference
                     for (j = 0; j < db.length; j++) {
                         // Execution: sensitive case using try to log unknown error
                         try {
-                                // @var s, javascript value of react { {value} }
-                            var s = db[j].substring(1, db[j].length - 1), 
-                                c; // @var c, represents to database source
+                            // @var s, javascript value of react { {value} }
+                            var s = db[j].substring(1, db[j].length - 1),
+                                c, // @var c, represents to database source
+                                h = null; // @var h, extra for HTML reactive
 
                             // Define: root/parent for database source
-                            c = eval("target.parentNode." + s);
+                            c = target.parentNode[s];
 
                             // Check: if there's no root/parent then do itself source
                             if (c == null || c == undefined) {
-                            // Define: node/child (itself) for database source
-                                c = eval("target." + s);
+                                // Define: node/child (itself) for database source
+                                c = target[s];
                             }
-                        } catch (err) { 
+                        } catch (err) {
                             // Error: unknown error, then set to null
-                            c = null; 
-                        } 
-                        
+                            c = null;
+                        }
+
                         // Case: if undef, then return void
                         if (c == undefined) return;
-                        
-                        // Case: that's for string between value "string"
-                        if (typeof c == 'string') c = "'" + c + "'";
-                        
+
+                        // Case: if HTML exists
+                        if (c.constructor.toString().includes("Element")) h = c;
+
+                        //Case: number check. if it's only number or alphabet
+                        if (/^\d+$/.test(c)) c = c;
+                        // Case: string check else
+                        else c = "\"" + c + "\"";
+
                         // Execution: replace that react value by database reference value
                         v = v.replace(db[j], c);
                     }
@@ -95,9 +102,22 @@ function _react_(element) {
                 // Execution: sensitive case using try to log unknown error
                 try {
                     // Define: @var e as evaluated value.
-                    e = window.eval(v);
+                    e = window.eval(v) == undefined ? '' : window.eval(v);
                 } catch (err) {
                     //console.log(err); BUG v1.2 (Not sure :v)
+                }
+
+                // HTML Reactive
+                if (typeof e == 'string') {
+                    if (e.includes("HTML") && e.includes("Element")) {
+                        e = h.outerHTML;
+                    } else {
+                        // XSS Option to do no XSS Attack
+                        if (window.Elode.XSSDefault) {
+                            e = window.Elode.XSS(e);
+                        }
+                    }
+
                 }
 
                 // Execution: @var x as target react value (origin) replace by @var e (evaluated)
@@ -120,7 +140,7 @@ function _react_(element) {
     // Execution: if there's elodeBase on element (required)
     if (element.elodeBase != null) {
         // @var ch, represent element's childNodes
-        var ch = element.childNodes, 
+        var ch = element.childNodes,
             i; // @var i (number), for loop
 
         // Check: if @var ch has length (there's children on element)

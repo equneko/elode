@@ -1,11 +1,14 @@
 /* 
     ES5 POLYFILLS - for fix EcmaScript support on IE < 9
-    here, there's usefull function prototype from for Elode.js purpose
+    here, there's usefull function prototype for Elode.js purpose
 
     Object.keys() | String.includes() | String.trim()
 */
 
-// Fix the Object.keys for IE < 9
+/* Fix the Object.keys for IE < 9
+    #code copied from stackoverflow by @jabclab
+    https://stackoverflow.com/questions/18912932/object-keys-not-working-in-internet-explorer
+*/
 if (!Object.keys) {
     Object.keys = function (object) {
         var keys = [], i;
