@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+	<h1 %epl@title ></h1>
+	<p %epl@data ></p>
+	<marquee %epl@marquee ></marquee>
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.apply(1);
+	  
+	  	EPotion.inject("title",function($L){
+			var l = $L; l.val = "EPotion JS"; l.blank="";
+		});
+
+		EPotion.inject("data",function($L){
+			var l = $L; l.val = "Simple Way Data Injection!";
+		});
+
+		EPotion.inject("marquee",function($L){
+			var l = $L; l.val = "This is Marquee";
+		});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	<p %epl@bind></p>
+	<p><i %epl@bind2></i></p>
+	
+	<input %epl@input/>
+
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Binds Html Element</p>";
+	  });
+	  
+	  EPotion.apply(1);
+	  
+	  EPotion.inject("input",function($L){
+	  	$L.attr = "style:=font-size:30px,type:=text,placeholder:=Input Here Now";
+		$L.binds = "bind,bind2";
+	  });
+	</script>
+  </body>
+</html>		

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	%node
+	%button
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  var app = EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Update Your Own Element</p>";
+		
+		$L.node = "<marquee %epl@mrq></marquee>";
+		$L.button = "<button %epl@btn></button>";
+	  });
+	  
+	  EPotion.apply(1);
+	  
+	  var mrq = EPotion.inject("mrq",function($L){
+	  	$L.val = "Hello... Im Marquee Element!";
+	  });
+	  
+	  var btn = EPotion.inject("btn",function($L){
+	  	$L.val = "Update Marquee";
+		$L.attr = "style:= font-size:30px";
+		$L.click = function(){
+			mrq.val = "Hei... Im Update";
+			mrq.attr = "style:= font-size:100px; color:blue";
+			EPotion.applyInject("mrq",mrq);
+		};
+	  });
+	</script>
+  </body>
+</html>		

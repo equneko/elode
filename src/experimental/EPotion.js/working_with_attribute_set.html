@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	<input %epl@input />
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.apply(1);
+	  
+	  var app = EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Working With Attribute() Set</p>";
+	  });
+	  
+	  EPotion.inject("input",function($L){
+	  	$L.attr = "style:=font-size:50px; border-radius:3px; border-color:black"+
+		",type:=text,placeholder:=Input Username";
+	  });
+	</script>
+  </body>
+</html>

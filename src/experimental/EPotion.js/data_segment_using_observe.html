@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	<div %epl@segment>
+	  <h1>%dataseg</h1>
+	</div>
+	
+	<input %epl@input/>
+
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.include("dataseg","Observe Me");
+	  EPotion.apply(1);
+	  
+	  EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Data Segment Using Observe()</p>";
+	  });
+	  
+	  EPotion.inject("input",function($L){
+	  	$L.attr = "style:=font-size:30px,type:=text,placeholder:=Input Here";
+	  });
+	  
+	  EPotion.observe("input","segment","dataseg");
+	</script>
+  </body>
+</html>		

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+	%title
+	%data
+	
+	%app.data.DATA1
+	%app.data.DATA2
+	
+	%app.marquee
+
+	<script src="js/epotion0.1.1.js"></script>
+	
+	<script>
+		var data = EPotion.infect(function($L){
+		var l = $L;
+	
+		l.title = "<h1>EPotion JS</h1>";
+		l.data = "<p>Simple Way Data Infection!</p>";
+	
+		l.app = {};
+		l.app.data = {};
+	
+		l.app.data.DATA1 = "<p>This is DATA1 Value!</p>";
+		l.app.data.DATA2 = "<p>This is DATA2 Value!</p>";
+	
+		l.app.marquee = "<marquee>This is Marquee</marquee>";
+		});
+	</script>
+	
+  </body>
+</html>

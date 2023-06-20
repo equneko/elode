@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	%title
+	%data
+	
+	<div %epl@parent></div>
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	   EPotion.apply(1);
+	  
+	  var data = EPotion.infect(function($L){
+		$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Make Children With Roots</p>";
+	  });
+	  
+	  EPotion.inject("parent",function($L){
+	  	$L.child1 = "<h1>Hei Im Child 1</h1>";
+		$L.child2 = "<h2>Hei Im Child 2</h2>";
+		$L.child3 = "<h3>Hei Im Child 3</h3>";
+		
+		$L.roots = "child1,child2,child3";
+	  });
+	</script>
+  </body>
+</html>		

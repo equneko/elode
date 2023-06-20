@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	<button %epl@btn></button>
+	%node
+
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.apply(1);
+	  
+	  var app = EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Element Click() Function</p>";
+		$L.node = "<marquee %epl@mrq ></marquee>";
+	  });
+	  
+	  EPotion.apply(1);
+	  
+	  EPotion.inject("btn",function($L){
+	  	$L.val = "Click Me!";
+		$L.attr = "style:=font-size:30px";
+		$L.click = function(){
+			alert("Im Clicked!");
+		};
+	  });
+	  
+	  EPotion.inject("mrq",function($L){
+	    $L.val = "Hey You! Click Me Now!";
+		$L.attr = "style:=font-size:40px";
+		$L.click = function(){
+			alert("Im Clicked!");
+		};
+	  });
+	</script>
+  </body>
+</html>		

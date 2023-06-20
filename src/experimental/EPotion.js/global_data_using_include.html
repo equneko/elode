@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	%title
+	%data
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.include("globe","<marquee>Hello! Im Global Marquee</marquee>");
+	  
+	  var app = EPotion.infect(function($L){
+	  	$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Global Data Using Include()</p> %globe";
+	  });
+	  
+	  EPotion.apply(1);
+	  
+	</script>
+  </body>
+</html>		

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+	%title
+	%data
+	
+	<ul %epl@list>
+	</ul>
+	
+	<script src="js/epotion0.1.1.js"></script>
+	<script>
+	  EPotion.apply(1);
+	  
+	  var data = EPotion.infect(function($L){
+		$L.title = "<h1>EPotion JS</h1>";
+		$L.data = "<p>Make List With Loops</p>";
+	  });
+		
+	  var list = EPotion.inject("list",function($L){
+	  	$L.attributes = ["style='color:red'","style='color:blue'"];
+		$L.childrens = ["Index 1","Index 2","Index 3","Index 4"];
+		
+		$L.loops = "li, attributes, childrens";
+	  });
+	</script>
+  </body>
+</html>		
