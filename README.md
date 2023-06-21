@@ -1,9 +1,16 @@
-
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
 **Elode** (Element On Development) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)**.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
-<img width="800" src="https://github.com/equneko/elode/blob/main/res/images/brand.png"></img>
+[![](https://komarev.com/ghpvc/?username=equneko&label=View%20Count&color=311B92&style=flat)]()
+[![](https://img.shields.io/badge/Experimental%20Project-black)]()
+[![](https://img.shields.io/badge/Unique-indigo)]()
+[![](https://img.shields.io/badge/Declarative-red)]()
+[![](https://img.shields.io/badge/Lightweight-yellow)]()
+[![](https://img.shields.io/badge/Front%20End-blue)]()
+[![](https://img.shields.io/badge/Reactive-green)]()
+
+<img width="800" src="https://github.com/equneko/elode/blob/main/res/images/brand.png"/>
 
 ## Elode.js Lite (Lightweight-Edition)
 **Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
@@ -32,7 +39,8 @@ Try Elode.js (online) with
 - CodePen.io https://codepen.io/equneko/pen/BaGobLa/ (v2.0)
 - JS Fiddle! https://jsfiddle.net/equneko/c9jnu6ma/ (v1.3)
 
-<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img>
+<!-- <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img> -->
+codepen[BaGobLa][350][js]
 
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
