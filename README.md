@@ -80,9 +80,9 @@ Elode("h1 Hello World").render();
 //result: <h1>Hello World</h1>
 
 //Next
-Elode("div <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render(); 
+Elode("div#app <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render(); 
 /* Result: 
-   <div>
+   <div id="app">
       <h1>Hello Elode.js</h1>
       <p>Get Started to <b>Elode.js</b></p>
    </div>
@@ -90,12 +90,12 @@ Elode("div <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render();
 
 //Extended
 Elode.use('div','h1','p');
-div(
+div("#app.container",
   h1("Elode.js"),
   p("A Unique Way <b Web Development>")
 ).render();
 /* Result: 
-   <div>
+   <div id="app" class="container">
       <h1>Elode.js</h1>
       <p>A Unique Way <b>Web Development</b></p>
    </div>
@@ -111,7 +111,7 @@ const { use, render } = Elode;
 use('div','h1','p');
 
 function CardView(title, content){
- return div(".card-view.some-class",
+ return div("#mycard.card-view.some-class",
    h1(title), p(content)
  );
 }
@@ -123,7 +123,8 @@ render(
 ```
 Result:
 ```html
-<div class="card-view some-class">
+<h1>Declarative</h1>
+<div id="mycard" class="card-view some-class">
   <h1>Elode.js</h1>
   <p>Get Started to <b>Elode.js</b></p>
 </div>
