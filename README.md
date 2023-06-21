@@ -9,6 +9,11 @@ Based on ES5 (EcmaScript 2009) that can support old web browsers and also suppor
 **Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
 Now you can make a simple and minimalist web application using the **Lite Version!**
 
+## Websites Using Elode.js
+- SkyFlext (Elode.js + Firebase) https://skyflext.web.app
+- SiKochengOren (Elode.js + ChatGPT) https://sikochengoren.netlify.app
+- Blueplan (Elode.js) https://blueplan.netlify.app
+
 ## Install
 - Download Release Versions
 - Using CDN JSDelivr:
@@ -43,13 +48,15 @@ Try Elode.js (online) with
  - Android WebBrowser (v4.4+ / v5.0 Stable)
  - Opera, Safari and IOS WebBrowser (Not Tested)
  
-## Library Compabilities
+## Javascript Compabilities
+![Firebase](https://img.icons8.com/?size=128&id=62452&format=png)
 ![jQuery](https://img.icons8.com/?size=128&id=40253&format=png)
 <img width="128" src="https://avatars.githubusercontent.com/u/9039821"></img>
+- Firebase (Tested) https://firebase.google.com
 - jQuery (Tested) https://jquery.com
 - highlight.js (Tested) https://highlightjs.org/
 
-## Framework Compabilities
+## CSS Compabilities
 
 <img width="128" src="https://yt3.googleusercontent.com/dW6to0x5Crmeh7yi-YPLcQRqVrBtx2BSh8eoKTJbE8NbjloQ0sqlmdszIlxokJU_97-ndOt_=s900-c-k-c0x00ffffff-no-rj"></img>
 - w3.css (Tested) https://www.w3schools.com/w3css/defaulT.asp
