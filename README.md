@@ -1,10 +1,11 @@
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
-**Elode** (Element On Development) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)**.
+**Elode** (Element On Development) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
 Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
-[![](https://komarev.com/ghpvc/?username=equneko&label=View%20Count&color=311B92&style=flat)]()
+[![](https://komarev.com/ghpvc/?username=equneko&label=Visit%20Count&color=311B92&style=flat)]()
+[![](https://img.shields.io/badge/Elode.js-v2.0%20(07/06/2023)-indigo)]()
 [![](https://img.shields.io/badge/Experimental%20Project-black)]()
-[![](https://img.shields.io/badge/Unique-indigo)]()
+[![](https://img.shields.io/badge/Unique-purple)]()
 [![](https://img.shields.io/badge/Declarative-red)]()
 [![](https://img.shields.io/badge/Lightweight-yellow)]()
 [![](https://img.shields.io/badge/Front%20End-blue)]()
@@ -39,8 +40,7 @@ Try Elode.js (online) with
 - CodePen.io https://codepen.io/equneko/pen/BaGobLa/ (v2.0)
 - JS Fiddle! https://jsfiddle.net/equneko/c9jnu6ma/ (v1.3)
 
-<!-- <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img> -->
-codepen[BaGobLa][350][js]
+<img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img>
 
 ## Browser Compabilities
  ![Chrome](https://img.icons8.com/color/128/chrome--v1.png)
@@ -69,88 +69,109 @@ codepen[BaGobLa][350][js]
 <img width="128" src="https://yt3.googleusercontent.com/dW6to0x5Crmeh7yi-YPLcQRqVrBtx2BSh8eoKTJbE8NbjloQ0sqlmdszIlxokJU_97-ndOt_=s900-c-k-c0x00ffffff-no-rj"></img>
 - w3.css (Tested) https://www.w3schools.com/w3css/defaulT.asp
 
-# Unique HTML Syntax ![Syntax](https://img.icons8.com/color/36/source-code.png)
-**Elode.js** brings you to the unique **HTML Syntax** for typing HTML code in a unique way!<br/>
-it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax
+# Unique ![Syntax](https://img.icons8.com/color/36/source-code.png)
+**Elode.js** brings you to the unique **HTML-like Syntax** for typing HTML code in a unique way! 
+it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax 
+but you can write quickly, different and less-code if you understand it.
 
-### Try It https://codepen.io/equneko/pen/NWzoGEj
 ```javascript
+//Basic
 Elode("h1 Hello World").render(); 
 //result: <h1>Hello World</h1>
 
-Elode("h1.blue This Will Be Blue").render(); 
-//result: <h1 class="blue">This Will Be Blue</h1>
+//Next
+Elode("div <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render(); 
+/* Result: 
+   <div>
+      <h1>Hello Elode.js</h1>
+      <p>Get Started to <b>Elode.js</b></p>
+   </div>
+*/
 
-Elode("h1#title.white.bg-dark Im White and Dark Background").render(); 
-//result: <h1 id="title" class="white bg-dark">Im White and Dark Background</h1>
+//Extended
+Elode.use('div','h1','p');
+div(
+  h1("Elode.js"),
+  p("A Unique Way <b Web Development>")
+).render();
+/* Result: 
+   <div>
+      <h1>Elode.js</h1>
+      <p>A Unique Way <b>Web Development</b></p>
+   </div>
+*/
 ```
 
-# Creating Element ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
-Here's basic example of **Elode** to creating HTML Element in javascript code with the unique query syntax type like HTML
+# Declarative ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
+Based on HTML-DOM, build your own Component/Element friendly with standard web development. 
+How it works? Elode.js includes their procedure into DOM that cause the Component/Element's same as HTMLElement.
 
-### Try It https://codepen.io/equneko/pen/bGKzVJW
 ```javascript
-//HTML Element (DOM)
-var NavBar = Elode(`nav 
-  <h1 Your Website Title>
-  <p Your Website Description>`);
-  
-NavBar.render(); //Rendering Element to <body></body>
+const { use, render } = Elode;
+use('div','h1','p');
+
+function CardView(title, content){
+ return div(".card-view.some-class",
+   h1(title), p(content)
+ );
+}
+
+render(
+ Title = h1("Declarative")
+ MyCard = CardView("Elode.js","Get Started to <b Elode.js>")
+);
 ```
 Result:
 ```html
-<div>
-  <h1>Your Website Title</h1>
-  <p>Your Website Description</p>
+<div class="card-view some-class">
+  <h1>Elode.js</h1>
+  <p>Get Started to <b>Elode.js</b></p>
 </div>
 ```
 
-# Building Component ![Component](https://img.icons8.com/color/48/web-components.png)
-As long as an element based, we're going to component, that have more complex to build web interfaces with the properties
+# Lightweight ![Component](https://img.icons8.com/color/48/web-components.png)
+Write in Javascript ES5 (EcmaScript 2009) that makes the size's small and minimalist
+and also it's works on some old web browser such as IE9+ or with compatible version on IE11
 
-### Try It https://codepen.io/equneko/pen/gOKqaNw
 ```javascript
-//Creating Root Element for Building Component
-var App = Elode([
-  "#app.container",
-  "h1 {{app.title}}",
-  "p {{app.subtitle}}"
-],{
-  app:{
-    title:"My App",
-    subtitle:"Built in Elode.js"
-  }
-}).render();
+const { use, render } = Elode;
+use('ul','li');
 
-//Rendering Button to App
-var GetStarted = Elode(
-"button.btn.medium Getting Started",{
-   onclick:function(){
-     alert("Welcome to Elode.js bro!");
-   }
-//Rendering to root. You can using like this too ".render(App);"
-}).render("#app"); 
+let js = ['React','Vue','Svelte','Elode'];
+
+render(
+   ul(
+      js.map((x) => li(x))
+   )
+)
 ```
 Result:
 ```html
-<div id="app" class="container">
-  <h1>My App</h1>
-  <p>Built in Elode.js</p>
-  <button class="btn medium">Getting Started</button>
-</div>
+<ul>
+   <li>React</li>
+   <li>Vue</li>
+   <li>Svelte</li>
+   <li>Elode</li>
+</ul>
 ```
 
-# Reactivity ![Reactive](https://img.icons8.com/color/32/swap.png)
-All elements can be reactive! if you add an event listener to your element. For example onclick:function(){}
+# Reactive ![Reactive](https://img.icons8.com/color/32/swap.png)
+All Component/Element can be **Reactive!** if you add some **EventListener** to your element
+or you can use alternative way with direct procedure
 
-### Try It https://codepen.io/equneko/pen/yLEZYmj
 ```javascript
-Elode("button You Count {{count}}",{
-  count:0,
-  onclick:function(){
-    this.count++;
-  }
-}).render();
+const { use, render } = Elode;
+use('button');
+
+render(
+  button("You Count {{count}}",{
+     count:0,
+     onclick(){
+        this.count++;
+     }
+  })
+);
+
 ```
 Result:
 ```html
@@ -161,8 +182,8 @@ Result:
 How about to using **Elode.js** now? First, you need to learn more about this library!
 So, where to start? well, let's view this actions below. You can choice to start from:
 
-- [Get Started](https://github.com/equneko/elode/blob/main/docs/get-started.md)
-- [Read Documentation](https://github.com/equneko/elode/tree/main/docs)
+- [Get Started](https://github.com/equneko/elode/blob/main/docs/get-started.md) (Coming Soon)
+- [Read Documentation](https://github.com/equneko/elode/tree/main/docs) (Coming Soon)
 - [Learn Example](https://github.com/equneko/elode/tree/main/example)
 
 # Icon Resources By [Icons8](https://icons8.com)
