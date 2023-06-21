@@ -3,16 +3,16 @@ const { app, use, hook, render, XSS } = Elode;
 use('div', 'h1', 'p', 'input', 'button');
 
 hook({
-    alf:{
-        login_submit(el){
-            if(el.constructor==HTMLInputElement){
-                el.on("keydown",function(e){
-                    if(e.keyCode==13){
+    alf: {
+        login_submit(el) {
+            if (el.constructor == HTMLInputElement) {
+                el.on("keydown", function (e) {
+                    if (e.keyCode == 13) {
                         Login.SubmitLogin();
                     }
                 });
-            }else{
-                el.on("click",function(){
+            } else {
+                el.on("click", function () {
                     Login.SubmitLogin();
                 });
             }
@@ -44,7 +44,7 @@ render(
             }),
             {
                 style: ctr,
-                SubmitLogin(){
+                SubmitLogin() {
                     var i, x;
                     for (i = 0; i < userlist.length; i++) {
                         x = userlist[i];
