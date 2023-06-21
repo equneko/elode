@@ -1,5 +1,5 @@
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
-**ELODE** (ELement On DEvelopment) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
+**ELODE** (**EL**ement **O**n **DE**velopment) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
 Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
 [![](https://komarev.com/ghpvc/?username=equneko&label=Visit%20Count&color=311B92&style=flat)]()
@@ -19,8 +19,10 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 
 ## Websites Using Elode.js
 - SkyFlext (Elode.js + Firebase) https://skyflext.web.app
-- SiKochengOren (Elode.js + ChatGPT) https://sikochengoren.netlify.app
+- Cycle (Elode.js + Firebase) https://alf-cycle-app.web.app
+- SiKochengOren (Elode.js + ChatGPT) https://sikochengoren.netlify.app (Server Down)
 - Blueplan (Elode.js) https://blueplan.netlify.app
+- Selamat Ultah Bro (Elode.js) https://selamat-ultah-broo.netlify.app
 
 ## Install
 - Download Release Versions
@@ -76,11 +78,14 @@ but you can **write quickly, different and less-code** if you understand it.
 
 ```javascript
 //Basic
-Elode("h1 Hello World").render(); 
+Elode("h1 Hello World").render();
 //result: <h1>Hello World</h1>
 
 //Next
-Elode("div#app <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render(); 
+Elode(`div#app 
+  <h1 Hello Elode.js!> 
+  <p Get Started to <b Elode.js> >
+`).render();
 /* Result: 
    <div id="app">
       <h1>Hello Elode.js</h1>
@@ -90,6 +95,7 @@ Elode("div#app <h1 Hello Elode.js!> <p Get Started to <b Elode.js> >").render();
 
 //Extended
 Elode.use('div','h1','p');
+
 div("#app.container",
   h1("Elode.js"),
   p("A Unique Way <b Web Development>")
@@ -138,7 +144,7 @@ and also it's works on some old web browser such as **IE9+** or with compatible 
 const { use, render } = Elode;
 use('ul','li');
 
-let js = ['React','Vue','Angular','jQuery','Elode'];
+let js = ['React','Vue','Svelte','Angular','jQuery','Elode'];
 
 render(
    ul(
@@ -151,6 +157,7 @@ Result:
 <ul>
    <li>React</li>
    <li>Vue</li>
+   <li>Svelte</li>
    <li>Angular</li>
    <li>jQuery</li>
    <li>Elode</li>
