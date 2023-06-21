@@ -137,7 +137,7 @@ and also it's works on some old web browser such as IE9+ or with compatible vers
 const { use, render } = Elode;
 use('ul','li');
 
-let js = ['React','Vue','Svelte','Elode'];
+let js = ['React','Vue','Angular','jQuery','Elode'];
 
 render(
    ul(
@@ -150,7 +150,8 @@ Result:
 <ul>
    <li>React</li>
    <li>Vue</li>
-   <li>Svelte</li>
+   <li>Angular</li>
+   <li>jQuery</li>
    <li>Elode</li>
 </ul>
 ```
