@@ -1,6 +1,6 @@
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
-**Elode** (Element On Development) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
-Based on ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
+**ELODE** (ELement On DEvelopment) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
+Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
 [![](https://komarev.com/ghpvc/?username=equneko&label=Visit%20Count&color=311B92&style=flat)]()
 [![](https://img.shields.io/badge/Elode.js-v2.0%20(07/06/2023)-indigo)]()
@@ -56,7 +56,7 @@ Try Elode.js (online) with
  - Android WebBrowser (v4.4+ / v5.0 Stable)
  - Opera, Safari and IOS WebBrowser (Not Tested)
  
-## Javascript Compabilities
+## JS Compabilities
 ![Firebase](https://img.icons8.com/?size=128&id=62452&format=png)
 ![jQuery](https://img.icons8.com/?size=128&id=40253&format=png)
 <img width="128" src="https://avatars.githubusercontent.com/u/9039821"></img>
@@ -72,7 +72,7 @@ Try Elode.js (online) with
 # Unique ![Syntax](https://img.icons8.com/color/36/source-code.png)
 **Elode.js** brings you to the unique **HTML-like Syntax** for typing HTML code in a unique way! 
 it's can be fast or simple??? Nope. it's like you will be confused if you don't understand with this unique syntax 
-but you can write quickly, different and less-code if you understand it.
+but you can **write quickly, different and less-code** if you understand it.
 
 ```javascript
 //Basic
@@ -103,8 +103,8 @@ div("#app.container",
 ```
 
 # Declarative ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
-Based on HTML-DOM, build your own Component/Element friendly with standard web development. 
-How it works? Elode.js includes their procedure into DOM that cause the Component/Element's same as HTMLElement.
+Based on **HTML-DOM**, build your own Component/Element friendly with **Standard Web Development**. 
+How it works? Elode.js includes their procedure into **DOM** that cause the Component/Element's same as **HTMLElement**.
 
 ```javascript
 const { use, render } = Elode;
@@ -131,8 +131,8 @@ Result:
 ```
 
 # Lightweight ![Component](https://img.icons8.com/color/48/web-components.png)
-Write in Javascript ES5 (EcmaScript 2009) that makes the size's small and minimalist
-and also it's works on some old web browser such as IE9+ or with compatible version on IE11
+Write in **JavaScript ES5** (EcmaScript 2009) that makes the size's small and minimalist
+and also it's works on some old web browser such as **IE9+** or with compatible version on **IE11**
 
 ```javascript
 const { use, render } = Elode;
