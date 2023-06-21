@@ -206,18 +206,16 @@
         return el; // Return: HTMLElement (DOM)
     };
 
-    /* Elode Application - Build component based */
+    /* Elode Application - Build application on single page */
     window.Elode.app = function (data, value) {
         if (data == null) return;
 
         if (typeof data == 'string') {
             var i,
                 x = document.querySelectorAll(data);
-
             for (i = 0; i < x.length; i++) {
                 eval("x[i]." + value);
             }
-
             return x;
         }
 
@@ -226,11 +224,17 @@
         }
 
         return {
-            render(target, reverse) {
+            db: data,
+
+            at(target, action) {
+                return app(data[target], action)[0];
+            },
+
+            set(target, reverse) {
                 if (reverse == null) reverse = false;
                 var x = null, i, j;
                 for (i in data) {
-                    if (data[i].constructor == 'array') {
+                    if (data[i].constructor == Array) {
                         for (j = 0; j < data[i].length; j++) {
                             x = bindTarget(data[i][j]);
                             if (reverse) x.show();
@@ -243,7 +247,7 @@
                     }
 
                 }
-                if (data[target].constructor == 'array') {
+                if (data[target].constructor == Array) {
                     for (j = 0; j < data[target].length; j++) {
                         x = bindTarget(data[target][j]);
                         if (reverse) x.hide();
@@ -255,13 +259,68 @@
                     else x.show();
                 }
 
+            },
+
+            get(target) {
+                if (target.constructor == Array) {
+                    var i, list = [];
+                    for (i = 0; i < target.length; i++) {
+                        list.push(bindTarget(data[target[i]]));
+                    }
+                    return list;
+                }
+                return bindTarget(data[target]);
+            }
+        }
+    };
+
+    /* Elode Router - Manage web router based on window.location.href */
+    window.Elode.router = function (routes, args) {
+        var x, href = window.location.href, rts;
+
+        if (typeof routes == 'string') {
+            if (href.includes("?/")) {
+                rts = href.split("?/");
+                if (routes != '') routes = "?/" + routes.trim();
+                if (args) routes += "?" + args;
+                window.location.href =
+                    href.split("?/" + rts[1].trim()).join(routes.trim());
+            } else {
+                window.location.href = href + "?/" + routes.trim();
+            }
+            return;
+        }
+
+        function ARGS(x) {
+            return x.trim().split("%20").join(" ");
+        }
+
+        if (!href.includes("?/")) {
+            if (href.includes("?"))
+                routes["/"](ARGS(href.split("?")[1]));
+            else routes["/"]();
+            return;
+        }
+        for (x in routes) {
+            rts = href.split("?/")[1];
+            if (rts.includes("?")) {
+                rts = rts.split("?");
+            } else {
+                rts = [rts, null];
+            }
+
+            if (x == rts[0].trim()) {
+                if (rts[1])
+                    routes[x](ARGS(rts[1]));
+                else
+                    routes[x]();
             }
         }
     };
 
     /* Elode Hook - Include your function hook/bind into Component/Element */
     window.Elode.hook = function (data) {
-        for(var i in data){
+        for (var i in data) {
             window.Elode.hook[i] = data[i];
         }
         return data;
@@ -275,10 +334,10 @@
         root.map = function (update, newCallback) {
             root.html("");
             if (newCallback) callback = newCallback;
-            eval("update.map(" + callback + ");");
+            eval("update.map(" + callback + ".render(this));");
         };
         root.onCreate = function () {
-            eval("array.map(" + callback + ");");
+            eval("array.map(" + callback + ".render(this));");
         };
         return root;
     };
@@ -307,19 +366,21 @@
 
             /* NEW v2.0 */
             window.eval("function " + x + "(){" +
-                "var el = window.Elode('" + y + "'), i, args = arguments, " +
-                "prop = args[args.length-1].constructor == Object ? args[args.length-1]:null;" +
-                "if(prop!=null) el = window.Elode('" + y + "', prop);" +
-                "for(i = 0; i < args.length; i++){" +
-                "if(args[i].constructor==String){ " +
-                "if(i==0) el = window.Elode('" + y + " '+args[i], prop);" +
-                "else window.Elode(args[i]).render(el);" +
-                "}" +
-                "else if(args[i].constructor==Array){ var j; for(j = 0; j < args[i].length; j++) Elode(args[i][j]).render(el); }" +
-                "else { if(args[i].constructor.toString().includes('Element')){ if(el.render){args[i].render(el);}else{el.add(args[i]);} }}" +
-                "}" +
-                "return el.react();"
-                + "}");
+            "var el = window.Elode('" + y + "'), i, args = arguments, sp = ' ', " +
+            "prop = args[args.length-1].constructor == Object ? args[args.length-1]:null;" +
+            "if(prop!=null) el = window.Elode('" + y + "', prop);" +
+            "for(i = 0; i < args.length; i++){" +
+            "if(args[i].constructor==String||typeof args[i]=='number'){ " +
+            "if(i==0){" +
+            "if(typeof args[i] == 'string'){ if(args[i][0]=='#'||args[i][0]=='.')sp=''; }" +
+            "el = window.Elode('" + y + "'+sp+args[i], prop);" +
+            "}else{ window.Elode(args[i]).render(el); }" +
+            "}" +
+            "else if(args[i].constructor==Array){ var j; for(j = 0; j < args[i].length; j++) Elode(args[i][j]).render(el); }" +
+            "else { if(args[i].constructor.toString().includes('Element')){ if(el.render){args[i].render(el);}else{el.add(args[i]);} }}" +
+            "}" +
+            "return el.react();"
+            + "}");
         }
     };
 
@@ -344,6 +405,7 @@
 
     /* Elode Render - Rendering arguments of elode element */
     window.Elode.render = function (nodes) {
+        if (nodes == null) return;
         if (arguments.length > 1) {
             nodes = arguments; var i;
             for (i = 0; i < nodes.length; i++) {
@@ -352,6 +414,7 @@
             return;
         }
         if (typeof nodes == 'string') {
+            if (nodes == '') return;
             Elode(nodes).render();
         } else {
             nodes.render();
@@ -448,11 +511,11 @@
     function _hook_(target, include) {
         var name = include.name.split(window.Elode.hookTag),
             value = include.value == null ? "" : include.value;
-        
-        if(name[0]==""){
-            window.Elode.hook[name[1]](target,value);
-        }else{
-            eval("window.Elode.hook."+name[0]+"."+name[1]+"(target,value);"); 
+
+        if (name[0] == "") {
+            window.Elode.hook[name[1]](target, value);
+        } else {
+            eval("window.Elode.hook." + name[0] + "." + name[1] + "(target,value);");
         }
     }
 
@@ -729,7 +792,7 @@
                                     this.react();
 
                                     // Elode Reactive Procedure for Root
-                                    if (this.root != null) this.root.react();
+                                    if (this.root != null && this.root.react) this.root.react();
 
                                 }
                             );
@@ -742,7 +805,7 @@
                                     this.react();
 
                                     // Elode Reactive Procedure for Root
-                                    if (this.root != null) this.root.react();
+                                    if (this.root != null && this.root.react) this.root.react();
                                 }
                             );
                         }
@@ -1010,7 +1073,7 @@
             var attr = element.attr(A),
                 i, ident = "";
 
-            if(A=="style"||A.includes("on"))ident = ";";
+            if (A == "style" || A.includes("on")) ident = ";";
 
             if (attr == null)
                 element.attr(A, ""); attr = element.attr(A)
@@ -1153,12 +1216,12 @@
             if (A != null) element.root = A;
             else element.root = document.body;
             // Hook Includes
-            if(!window.Elode.disableHook){
+            if (!window.Elode.disableHook) {
                 var i, eattr = element.attr();
-                if(eattr!=null){
+                if (eattr != null) {
                     for (i = 0; i < eattr.length; i++) {
                         if (eattr[i].name.includes(window.Elode.hookTag)) {
-                        _hook_(element, eattr[i]);
+                            _hook_(element, eattr[i]);
                         }
                     }
                 }

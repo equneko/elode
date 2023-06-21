@@ -270,7 +270,7 @@ function _element_(query, property) {
                                 this.react();
 
                                 // Elode Reactive Procedure for Root
-                                if(this.root!=null) this.root.react();
+                                if (this.root != null && this.root.react) this.root.react();
 
                             }
                         );
@@ -282,8 +282,7 @@ function _element_(query, property) {
                                     but the different's just attachEvent */
                                 this.react();
 
-                                // Elode Reactive Procedure for Root
-                                if(this.root!=null) this.root.react();
+                                if (this.root != null && this.root.react) this.root.react();
                             }
                         );
                     }
