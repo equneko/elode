@@ -80,11 +80,11 @@
             vdom.v = _element_('div', property);
             el.innerHTML = "";
             for (i = 0; i < c.length; i++) {
-                vdom.ab = c_char(c[i], ' ');
+                vdom.ab = c_char(c[i].split('((').join('<').split('))').join('>'), '    ');
                 vdom.a = vdom.ab.str;
                 vdom.b = vdom.ab.len;
                 if (vdom.a.length <= 0 || vdom.a == '\t') continue;
-                vdom.el.push([_element_(vdom.a, property), vdom.b]);
+                vdom.el.push([window.Elode(vdom.a, property), vdom.b]);
             }
 
             //Record Interpreter
@@ -107,7 +107,7 @@
                             index -= 1;
                             change = false;
                         }
-                        if (b == root[0][1]) { // CHANGE - ALGORITHM RULES
+                        if (b == root[0][1]) { // Change To First
                             index = 0;
                         }
                         if (index == 0) rec = false;
@@ -123,7 +123,7 @@
                     if (i > 0 && b == root[0][1]) {
                         root = []; index = 0; root[0] = [a, b]; //Stop Record
                     }
-                    el.appendChild(root[index][0]); //Append to Recording
+                    el.appendChild(root[index][0]); //Append to Element #ROOT
                 }
             }
 
@@ -167,7 +167,7 @@
         if (typeof query != 'string' && query.constructor.toString().includes("Element")) {
             el = query;
             elode_prop(property, el);
-            elode_react(el);
+            //elode_react(el); FIXED BUG ELODE BASE CHANGED AS EVALUATED REACT
             _react_(el);
 
             return _property_(el);
@@ -392,12 +392,14 @@
             window["$" + i] = v;
             F = " function _name_(value){" +
                 "var x, e = _i; " +
-                "if(typeof e == 'object'){ " +
+                "if(e.constructor == Object){ " +
                 "for(x in value){_i[x] = value[x];} " +
+                "}else if(e.constructor.toString().includes('Element')){"+
+                "_i = value;"+
                 "}else{_i = value;} " +
                 "var I, E = document.querySelectorAll('[ref]'); " +
                 "for(I = 0; I < E.length; I++){E[I].react();} " +
-                "};";
+                "return _i};";
             window.eval(F.split('_name_').
                 join(i).split('_i').join("$" + i));
         }
@@ -1109,12 +1111,12 @@
 
         // Elode - Cell, get HTMLElement (root)
         element.cell = function ($) {
-            var parent = element.parentElement,
+            var parent = element.root,
                 cells = [];
 
-            while (parent != null && parent.elodeProperty != null) {
+            while (parent != null && parent.elodeQuery != null) {
                 cells.push(parent);
-                parent = parent.parentElement;
+                parent = parent.root;
             }
 
             if ($ == null) return cells;
@@ -1163,7 +1165,7 @@
             element.seen = function ($) {
                 if ($ == null) {
                     var x = true;
-                    if ($.style.display == 'none') {
+                    if (element.style.display == 'none') {
                         x = false;
                     }
                     return x;
@@ -1414,10 +1416,19 @@
                     // Check: key equals "$" dollar it means there's #Reference function
                     if (k[0] == '$') {
                         // Check: if there's not #ref attribute
-                        if (target.getAttribute("ref") == null) {
-                            // then set it into HTMLElement to do #Reference
-                            target.setAttribute("ref", "");
+                        if(target.getAttribute){
+                            if (target.getAttribute("ref") == null) {
+                                // then set it into HTMLElement to do #Reference
+                                target.setAttribute("ref", "");
+                            }
+                        }else{
+                            // Case: TEXT NODE there's no getAtttribute then using parentNode
+                            if (target.parentNode.getAttribute("ref") == null) {
+                                // then set it into HTMLElement to do #Reference
+                                target.parentNode.setAttribute("ref", "");
+                            }
                         }
+                        
                     }
 
                     // Self-Reactive: it's means that not javascript reactivity
@@ -1433,15 +1444,23 @@
                                 // @var s, javascript value of react { {value} }
                                 var s = db[j].substring(1, db[j].length - 1),
                                     c, // @var c, represents to database source
-                                    h = null; // @var h, extra for HTML reactive
+                                    h = null, // @var h, extra for HTML reactive
+                                    t = ''; // @var t for temporary string
+
+                                // Special: scope/bind the root from cell feature
+                                if(s.trim()[0]=="#"){
+                                    t = s.trim().substring(0,2);
+                                    s = s.split(t).join('').trim();
+                                    s = "cell("+t[1]+")." + s;
+                                }
 
                                 // Define: root/parent for database source
-                                c = target.parentNode[s];
+                                c = eval("target."+s);
 
                                 // Check: if there's no root/parent then do itself source
                                 if (c == null || c == undefined) {
                                     // Define: node/child (itself) for database source
-                                    c = target[s];
+                                    c = eval("target.parentNode."+s);
                                 }
                             } catch (err) {
                                 // Error: unknown error, then set to null
@@ -1473,7 +1492,7 @@
                         //console.log(err); BUG v1.2 (Not sure :v)
                     }
 
-                    // HTML Reactive
+                    // HTML Reactive {{element}}
                     if (typeof e == 'string') {
                         if (e.includes("HTML") && e.includes("Element")) {
                             e = h.outerHTML;
@@ -1484,6 +1503,9 @@
                             }
                         }
 
+                    }else if(e.constructor.toString().includes("Element")){
+                        // HTML Reference {$element}
+                        e = e.outerHTML;
                     }
 
                     // Execution: @var x as target react value (origin) replace by @var e (evaluated)
