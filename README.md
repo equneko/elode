@@ -40,6 +40,7 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 ## Playground
 Try Elode.js (online) with 
 - CodePen.io https://codepen.io/equneko/pen/BaGobLa/ (v2.0)
+- Playcode.io https://playcode.io/elode (v2.0)
 - JS Fiddle! https://jsfiddle.net/equneko/c9jnu6ma/ (v1.3)
 
 <img width="768" src="https://github.com/equneko/elode/blob/main/res/images/codepen.png"></img>
@@ -118,19 +119,20 @@ use('div','h1','p');
 
 function CardView(title, content){
  return div("#mycard.card-view.some-class",
-   h1(title), p(content)
+    title.clone(), h1("Elode.js"), p(content)
  );
 }
 
 render(
- Title = h1("Declarative")
- MyCard = CardView("Elode.js","Get Started to <b Elode.js>")
+ Title = h1("Declarative"),
+ MyCard = CardView(Title,"Get Started to <b Elode.js>")
 );
 ```
 Result:
 ```html
 <h1>Declarative</h1>
 <div id="mycard" class="card-view some-class">
+  <h1>Declarative</h1>
   <h1>Elode.js</h1>
   <p>Get Started to <b>Elode.js</b></p>
 </div>
@@ -141,15 +143,12 @@ Write in **JavaScript ES5** (EcmaScript 2009) that makes the size's small and mi
 and also it's works on some old web browser such as **IE9+** or with compatible version on **IE11**
 
 ```javascript
-const { use, render } = Elode;
+Elode.import('use','render');
 use('ul','li');
 
 let js = ['React','Vue','Svelte','Angular','jQuery','Elode'];
-
 render(
-   ul(
-      js.map((x) => li(x))
-   )
+   ul( js.map(x => li(x)) )
 )
 ```
 Result:
