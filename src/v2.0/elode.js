@@ -28,10 +28,6 @@
         // Check: required @param query and property not null
         if (query == null && property == null) return;
 
-        // Check: XSSDefault option, to do apply no XSS Attack by default 
-        if (window.Elode.XSSDefault != false && typeof query == 'string')
-            query = window.Elode.XSS(query);
-
         // Define first @var el as represent of HTMLElement that want to create
         var el = null;
 
@@ -206,6 +202,14 @@
         return el; // Return: HTMLElement (DOM)
     };
 
+    /* Elode Import - Import feature from internal to window */
+    window.Elode.import = function () {
+        var i, data = arguments;
+        for (i = 0; i < data.length; i++) {
+            window[data[i]] = window.Elode[data[i]];
+        }
+    }
+
     /* Elode Application - Build application on single page */
     window.Elode.app = function (data, value) {
         if (data == null) return;
@@ -318,6 +322,11 @@
         }
     };
 
+    /* Elode Init - Initialize Elode element procedures */
+    window.Elode.init = function (element) {
+        element = _property_(element);
+    }
+
     /* Elode Hook - Include your function hook/bind into Component/Element */
     window.Elode.hook = function (data) {
         for (var i in data) {
@@ -325,19 +334,22 @@
         }
         return data;
     };
-    window.Elode.disableHook = false;
-    window.Elode.hookTag = ":";
+    window.Elode.__disableHook__ = false;
+    window.Elode.__hookTag__ = ":";
 
     /* Elode Map - Manipulate your Array into Component/Element */
     window.Elode.map = function (root, array, callback) {
         root = root != null && root != "" ? window.Elode(root) : window.Elode("div");
+        root.__proto__.map = {
+            array: array, callback: callback
+        };
         root.map = function (update, newCallback) {
             root.html("");
-            if (newCallback) callback = newCallback;
-            eval("update.map(" + callback + ".render(this));");
+            if (newCallback) this.__proto__.map.callback = newCallback;
+            eval("update.map(" + this.__proto__.map.callback + ".render(this));");
         };
         root.onCreate = function () {
-            eval("array.map(" + callback + ".render(this));");
+            eval("this.__proto__.map.array.map(" + this.__proto__.map.callback + ".render(this));");
         };
         return root;
     };
@@ -359,28 +371,28 @@
             return;
         } else {
             html = tags;
-        } setUse(tags, html);
+        } return setUse(tags, html);
         function setUse(x, y) {
             /* OLD v1.3 window.eval("function " + x + "(html,prop){" +
                 "return Elode('" + y + " '+html,prop);}"); */
 
             /* NEW v2.0 */
-            window.eval("function " + x + "(){" +
-            "var el = window.Elode('" + y + "'), i, args = arguments, sp = ' ', " +
-            "prop = args[args.length-1].constructor == Object ? args[args.length-1]:null;" +
-            "if(prop!=null) el = window.Elode('" + y + "', prop);" +
-            "for(i = 0; i < args.length; i++){" +
-            "if(args[i].constructor==String||typeof args[i]=='number'){ " +
-            "if(i==0){" +
-            "if(typeof args[i] == 'string'){ if(args[i][0]=='#'||args[i][0]=='.')sp=''; }" +
-            "el = window.Elode('" + y + "'+sp+args[i], prop);" +
-            "}else{ window.Elode(args[i]).render(el); }" +
-            "}" +
-            "else if(args[i].constructor==Array){ var j; for(j = 0; j < args[i].length; j++) Elode(args[i][j]).render(el); }" +
-            "else { if(args[i].constructor.toString().includes('Element')){ if(el.render){args[i].render(el);}else{el.add(args[i]);} }}" +
-            "}" +
-            "return el.react();"
-            + "}");
+            return window.eval("function " + x + "(){" +
+                "var el = window.Elode('" + y + "'), i, args = arguments, sp = ' ', " +
+                "prop = args[args.length-1].constructor == Object ? args[args.length-1]:null;" +
+                "if(prop!=null) el = window.Elode('" + y + "', prop);" +
+                "for(i = 0; i < args.length; i++){" +
+                "if(args[i].constructor==String||typeof args[i]=='number'){ " +
+                "if(i==0){" +
+                "if(typeof args[i] == 'string'){ if(args[i][0]=='#'||args[i][0]=='.')sp=''; }" +
+                "el = window.Elode('" + y + "'+sp+args[i], prop);" +
+                "}else{ window.Elode(args[i]).render(el); }" +
+                "}" +
+                "else if(args[i].constructor==Array){ var j; for(j = 0; j < args[i].length; j++) Elode(args[i][j]).render(el); }" +
+                "else { if(args[i].constructor.toString().includes('Element')){ if(el.render){args[i].render(el);}else{el.add(args[i]);} }}" +
+                "}" +
+                "return el.react();"
+                + "}");
         }
     };
 
@@ -394,11 +406,11 @@
                 "var x, e = _i; " +
                 "if(e.constructor == Object){ " +
                 "for(x in value){_i[x] = value[x];} " +
-                "}else if(e.constructor.toString().includes('Element')){"+
-                "_i = value;"+
+                "}else if(e.constructor.toString().includes('Element')){" +
+                "_i = value;" +
                 "}else{_i = value;} " +
                 "var I, E = document.querySelectorAll('[ref]'); " +
-                "for(I = 0; I < E.length; I++){E[I].react();} " +
+                "for(I = 0; I < E.length; I++){if(E[I].react)E[I].react();} " +
                 "return _i};";
             window.eval(F.split('_name_').
                 join(i).split('_i').join("$" + i));
@@ -413,29 +425,273 @@
             for (i = 0; i < nodes.length; i++) {
                 window.Elode.render(nodes[i]);
             }
-            return;
         }
         if (typeof nodes == 'string') {
             if (nodes == '') return;
             Elode(nodes).render();
         } else {
-            nodes.render();
+            if (nodes.render) nodes.render();
+        }
+
+        return {
+            build(data) {
+                var i, j, x, use = [], ref = [], def = [], prop = [], base = '', js = '', html = '';
+                for (x in window) {
+                    if (x[0] == "$") {
+                        let v = window[x];
+                        if (/^\d+$/.test(v)) v = v;
+                        else v = '"' + v + '"';
+                        ref.push(x.substring(1) + ":" + v + "");
+                    }
+                }
+
+                if (ref.length > 0)
+                    js += "window.Elode.ref({" + ref.toString() + "});\n";
+
+                function arrayCompiler(array) {
+                    if (array.length == 0) return "";
+                    let i, v, r = '';
+                    for (i = 0; i < array.length; i++) {
+                        v = array[i];
+                        if (!/^\d+$/.test(v)) r += '"' + v + '"';
+                        else r += v;
+                    }
+                    return r;
+                }
+                function elodeUseCase(element) {
+                    let i, e = element.children;
+                    if (e.length > 0) {
+                        for (i = 0; i < e.length; i++) {
+                            elodeUseCase(e[i]);
+                        }
+                    }
+                    use.push('"' + element.tagName.toLowerCase() + '"');
+                }
+
+                function compile(node, index, child) {
+                    let compress = false, co = '';
+                    if (data.compress) {
+                        for (i = 0; i < data.compress.length; i++) {
+                            let a = data.compress[i];
+                            if (a.elodeQuery.replace(a.elodeBase, '').trim() ==
+                                node.elodeQuery.replace(node.elodeBase, '').trim()) {
+
+                                if (index == 0) {
+                                    compress = true;
+                                } else {
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    var ev = "e" + index + "" + (Math.floor(Math.random() * 10000)), fn = '';
+                    if (node.__proto__.map) {
+                        prop.push("window.Elode('_[_e=" + ev + "]').__proto__.map = {};\n");
+                        let V = '', useHtmlTag;
+                        if (node.__proto__.map.array) {
+                            V = arrayCompiler(node.__proto__.map.array);
+                            prop.push("window.Elode('_[_e=" + ev + "]').__proto__.map.array = [" + V + "];\n");
+                        }
+                        if (node.__proto__.map.callback) {
+                            V = node.__proto__.map.callback;
+                            useHtmlTag = V();
+                            if (useHtmlTag.constructor.toString().includes("Element")) {
+                                elodeUseCase(useHtmlTag);
+                            }
+                            prop.push("window.Elode('_[_e=" + ev + "]').__proto__.map.callback = " + V + ";\n");
+                        }
+
+                        prop.push("window.Elode.map(window.Elode('_[_e=" + ev + "]')," +
+                            "window.Elode('_[_e=" + ev + "]').__proto__.map.array," +
+                            "window.Elode('_[_e=" + ev + "]').__proto__.map.callback);\n");
+                    }
+                    for (x in node) {
+                        if (node[x] != null) {
+                            let bo = node[x].constructor == Function && node[x].name != ""
+                                && !node[x].toString().includes("[native code]");
+
+                            if (bo && node[x].name.substring(0, 2) != "on" ||
+                                bo && node[x].name[2] == "R" ||
+                                bo && node[x].name[2] == "D") {
+                                js += "window.Elode('_[_e=" + ev + "]')." + x + " = function" + node[x].toString().replace(x, '') + ";\n";
+                                if (x == "onRender") {
+                                    js += "window.Elode('_[_e=" + ev + "]').__proto__.runtime();\n";
+                                }
+                                node.attr("_e", ev);
+                            }
+                        }
+                        if (x == "elodeBase") {
+                            if (node.elodeBase.includes("{") && node.elodeBase.includes("}")) {
+                                if (compress) co += "window.Elode(_elode_element_).elodeBase = \"" + node.elodeBase + "\"; \n";
+                                else base += "window.Elode('_[_e=" + ev + "]').elodeBase = \"" + node.elodeBase + "\"; \n";
+                            }
+                        }
+                        if (x == "elodeProperty") {
+                            let p, q;
+                            for (p in node[x]) {
+                                if (p == "elodeQuery" || p == "elodeProperty") continue;
+                                q = node[x][p];
+                                if (q.constructor == Function) continue;
+                                if (!/^\d+$/.test(q) && typeof q == 'string') q = '"' + q + '"';
+                                if (q.constructor == Array && q.length == 0) q = "[]";
+                                if (q.constructor == Object && Object.keys(q).length == 0) q = "{}";
+
+                                if (compress) co += "window.Elode(_elode_element_)." + p + " = " + q + "; \n";
+                                else prop.push("window.Elode('_[_e=" + ev + "]')." + p + " = " + q + "; \n");
+                            }
+                        }
+                        if (x == "onCreate") {
+                            js += "(" + node.onCreate.toString().replace("onCreate", 'function') + ").call(window.Elode('_[_e=" + ev + "]'));\n";
+                        }
+                        if (x.substring(0, 2) == "on" && x.length > 2 || x == "elodeBase") {
+                            if (node[x] != null) {
+                                fn = node[x].toString().replace(x, "function") + "\n";
+                                if (x != "elodeBase" && x[2] != "C" && x[2] != "R" && x[2] != "D") {
+                                    if (compress) co += "window.Elode(_elode_element_).on('" + x.substring(2) + "'," + fn + ");\n";
+                                    else js += "window.Elode('_[_e=" + ev + "]').on('" + x.substring(2) + "'," + fn + ");\n";
+                                }
+                                node.attr("_e", ev);
+                            }
+                        }
+                    }
+                    if (node.attr()) {
+                        for (i = 0; i < node.attr().length; i++) {
+                            let a = node.attr()[i].name;
+                            if (a.includes(window.Elode.__hookTag__)) {
+                                js += "window.Elode('_[_e=" + ev + "]').__hook__();\n";
+                                break;
+                            }
+                        }
+                    }
+                    if (node.children.length > 0) {
+                        childCompile(node);
+                    }
+                    if (child == null) html += node.html() + "\n";
+                    if (compress) {
+                        js += 'const ' + ev + ' = document.querySelectorAll("' + node.elodeQuery.replace(node.elodeBase, '').trim() + '");\n' +
+                            'for(let i = 0; i < ' + ev + '.length; i++){\n' +
+                            co.split("_elode_element_").join(ev + "[i]") +
+                            '}';
+                    }
+                }
+                function childCompile(root) {
+                    let j;
+                    for (j = 0; j < root.children.length; j++) {
+                        compile(root.children[j], j, true);
+                    }
+                }
+
+                if (nodes.length > 1) {
+                    for (i = 0; i < nodes.length; i++) {
+                        compile(nodes[i], i);
+                    }
+                } else {
+                    compile(nodes, 0);
+                }
+
+                if (data.include) {
+                    if (data.include.constructor == Object) {
+                        for (x in data.include) {
+                            let v = data.include[x];
+                            if (v.constructor == Function) {
+                                if (x == null) x = "";
+                                def.push(v.toString() + x + "();\n");
+                            } else if (v.constructor.toString().includes("Element")) {
+                                def.push(x + " = window.Elode('_[_e=" + v.attr("_e") + "]');\n");
+                            } else {
+                                if (/^\d+$/.test(v)) v = v;
+                                else v = '"' + v + '"';
+                                def.push(x + " = " + v + ";\n");
+                            }
+                        }
+                    } else {
+                        def.push(data.include.toString() + "\n");
+                    }
+                }
+                function scopeSet(_x, _y) {
+                    if (typeof _x == 'string') return _x.split(_y[1].trim() + "=" +
+                        _y[2].substring(0, _y[2].length - 1).trim()).join(_y[0].trim());
+
+                    let _i, r = [];
+                    for (_i = 0; _i < _x.length; _i++) {
+                        r.push(_x[_i].split(_y[1].trim() + "=" +
+                            _y[2].substring(0, _y[2].length - 1).trim()).join(_y[0].trim()));
+                    }
+                    return r;
+                }
+                function arraySet(_x) {
+                    var i, r = '';
+                    for (i = 0; i < _x.length; i++) {
+                        r += _x[i];
+                    }
+                    return r;
+                }
+
+                for (i = 0; i < def.length; i++) {
+                    x = def[i].trim().split("=");
+                    js = scopeSet(js, x);
+                    prop = scopeSet(prop, x);
+                }
+
+                def = arraySet(def); prop = arraySet(prop);
+
+                let imp = '';
+                if (data.import) {
+                    if (typeof data.import == 'string') {
+                        imp = "window.Elode.import('" + data.import + "');\n";
+                    } else {
+                        for (i = 0; i < data.import.length; i++) {
+                            imp += "'" + data.import[i] + "',";
+                        }
+                        imp = "window.Elode.import(" + imp + ");\n";
+                    }
+                }
+
+                js = imp + (use.length > 0 ? "window.Elode.use(" + use.reverse().toString() + ");\n" : "") + def + prop + "\n" + js + base;
+
+                if (data.scope == null) data.scope = "_";
+                if (data.name == null) data.name = "{ Project Name }";
+                if (data.author == null) data.author = "{ Your Name }";
+
+                js = "/*\n   Elode.js v2.0 Build \n   Date: " + new Date().toLocaleString() + "\
+                    \n\n   Project: "+ data.name + "\n   Author: " + data.author + "\n*/\
+                    \n\nwindow."+ data.scope + " = Elode; " + data.scope + ".init(document.body);\n" + js.split("window.Elode").join(data.scope)
+
+                if (data.hidden == null || data.hidden == false) {
+                    window.Elode.use('code', 'pre', 'h1', 'button')
+                    window.Elode.render(
+                        code("#build",
+                            h1("Elode.js Build"),
+
+                            button("[style padding:2px 8px;background-color:orange] HTML Code", {
+                                onclick() {
+                                    navigator.clipboard.writeText(html);
+                                    alert("HTML Code Copied!");
+                                }
+                            }),
+                            pre("").txt(html),
+
+                            button("[style padding:2px 8px;background-color:yellow] JavaScript Code", {
+                                onclick() {
+                                    navigator.clipboard.writeText(js);
+                                    alert("Javascript Code Copied!");
+                                }
+                            }),
+                            pre("").txt(js)
+                        )
+                    )
+                }
+
+                return { html: html, js: js };
+            }
         }
     };
 
-
-    /* Elode XSS - Option to do no XSS attack to your source */
-    window.Elode.XSS = function (source) {
-        if (window.Elode.XSSDefault)
-            return source.split("&lt;").join("<").split("&gt;").join(">");
-
-        return source.split("<").join("&lt;").split(">").join("&gt;");
+    /* Elode Info - Extra properties for describe Elode.js */
+    window.Elode.__info__ = {
+        VERSION: '2.0',
+        CODE: 2007062023
     };
-    window.Elode.XSSDefault = false;
-
-    /* Elode Common - Extra properties for describe Elode.js */
-    window.Elode.VERSION = '2.0';
-    window.Elode.CODE = 2007062023;
 
     /* 
         ELODE APPLICATION - Elode.js Application
@@ -511,7 +767,7 @@
         @return void
     */
     function _hook_(target, include) {
-        var name = include.name.split(window.Elode.hookTag),
+        var name = include.name.split(window.Elode.__hookTag__),
             value = include.value == null ? "" : include.value;
 
         if (name[0] == "") {
@@ -1217,17 +1473,7 @@
             // Fix Root NULL
             if (A != null) element.root = A;
             else element.root = document.body;
-            // Hook Includes
-            if (!window.Elode.disableHook) {
-                var i, eattr = element.attr();
-                if (eattr != null) {
-                    for (i = 0; i < eattr.length; i++) {
-                        if (eattr[i].name.includes(window.Elode.hookTag)) {
-                            _hook_(element, eattr[i]);
-                        }
-                    }
-                }
-            }
+            element.__hook__();
             // Check Reactive            
             element.react();
             // Create Callback
@@ -1236,11 +1482,30 @@
                     element.onCreate();
                 } catch (err) { }
             }
-            // Render Callback
-            _rendering_(element);
-
+            // Rendering Callback
+            element.__runtime__();
             return element;
         };
+
+        // Elode - Runtime, rendering without render function
+        element.__runtime__ = function () {
+            _rendering_(element);
+        };
+
+        // Elode - Hook, include procedure of hook
+        element.__hook__ = function () {
+            // Hook Includes
+            if (!window.Elode.__disableHook__) {
+                var i, eattr = element.attr();
+                if (eattr != null) {
+                    for (i = 0; i < eattr.length; i++) {
+                        if (eattr[i].name.includes(window.Elode.__hookTag__)) {
+                            _hook_(element, eattr[i]);
+                        }
+                    }
+                }
+            }
+        }
 
         // Fixed: BUG v1.1 NOT ALL ADAPTED ELODE FUNCTIONS
         var C = element.childNodes;
@@ -1398,7 +1663,8 @@
                 k, // @var k (string), key of first reactive value (for #Reference)
                 v, // @var v (string), reactive value
                 x, // @var x (HTMLElement), represents target to do reactive case
-                db; // @var db (array), database reference
+                db, // @var db (array), database reference
+                xss = false; // @var xss (string), user can type HTML or No (XSS Injection)
 
             // Check: @param r not null (required)
             if (r != null) {
@@ -1410,25 +1676,36 @@
                 for (i = 0; i < r.length; i++) {
                     // @var v, value of react { value } { 1 + 1}
                     v = r[i].substring(1, r[i].length - 1);
+
+                    // Check: XSS Enable/Disable option defined as first line of reactive's "html"
+                    if (v.substring(0, 4) == "html") {
+                        v = v.substring(4).trim();
+                        xss = true;
+                        if (!target.__proto__.xss)
+                            target.__proto__.xss = true;
+                    } else {
+                        xss = false;
+                    }
+
                     // @var k, key of react value {key value}
                     k = v.split(' ')[0].trim();
 
                     // Check: key equals "$" dollar it means there's #Reference function
                     if (k[0] == '$') {
                         // Check: if there's not #ref attribute
-                        if(target.getAttribute){
+                        if (target.getAttribute) {
                             if (target.getAttribute("ref") == null) {
                                 // then set it into HTMLElement to do #Reference
                                 target.setAttribute("ref", "");
                             }
-                        }else{
+                        } else {
                             // Case: TEXT NODE there's no getAtttribute then using parentNode
                             if (target.parentNode.getAttribute("ref") == null) {
                                 // then set it into HTMLElement to do #Reference
                                 target.parentNode.setAttribute("ref", "");
                             }
                         }
-                        
+
                     }
 
                     // Self-Reactive: it's means that not javascript reactivity
@@ -1448,19 +1725,19 @@
                                     t = ''; // @var t for temporary string
 
                                 // Special: scope/bind the root from cell feature
-                                if(s.trim()[0]=="#"){
-                                    t = s.trim().substring(0,2);
+                                if (s.trim()[0] == "#") {
+                                    t = s.trim().substring(0, 2);
                                     s = s.split(t).join('').trim();
-                                    s = "cell("+t[1]+")." + s;
+                                    s = "cell(" + t[1] + ")." + s;
                                 }
 
                                 // Define: root/parent for database source
-                                c = eval("target."+s);
+                                c = eval("target." + s);
 
                                 // Check: if there's no root/parent then do itself source
                                 if (c == null || c == undefined) {
                                     // Define: node/child (itself) for database source
-                                    c = eval("target.parentNode."+s);
+                                    c = eval("target.parentNode." + s);
                                 }
                             } catch (err) {
                                 // Error: unknown error, then set to null
@@ -1468,7 +1745,7 @@
                             }
 
                             // Case: if undef, then return void
-                            if (c == undefined) return;
+                            if (c == undefined) c = '';
 
                             // Case: if HTML exists
                             if (c.constructor.toString().includes("Element")) h = c;
@@ -1488,28 +1765,32 @@
                     try {
                         // Define: @var e as evaluated value.
                         e = window.eval(v) == undefined ? '' : window.eval(v);
+
+                        // HTML Reactive {{element}}
+                        if (typeof e == 'string') {
+                            if (e.includes("HTML") && e.includes("Element")) {
+                                e = h.outerHTML;
+                            }
+                        } else if (e.constructor.toString().includes("Element")) {
+                            // HTML Reference {$element}
+                            e = e.outerHTML;
+                        }
                     } catch (err) {
                         //console.log(err); BUG v1.2 (Not sure :v)
-                    }
-
-                    // HTML Reactive {{element}}
-                    if (typeof e == 'string') {
-                        if (e.includes("HTML") && e.includes("Element")) {
-                            e = h.outerHTML;
-                        } else {
-                            // XSS Option to do no XSS Attack
-                            if (window.Elode.XSSDefault) {
-                                e = window.Elode.XSS(e);
-                            }
-                        }
-
-                    }else if(e.constructor.toString().includes("Element")){
-                        // HTML Reference {$element}
-                        e = e.outerHTML;
+                        e = '';
                     }
 
                     // Execution: @var x as target react value (origin) replace by @var e (evaluated)
-                    x = x.replace(r[i], e); // it's means that reactive case was done and already to set into HTMLElement
+                    if (xss) {
+                        // Case: XSS's enabled then reactive can do HTML input
+                        x = x.replace(r[i], e);
+                    } else {
+                        // Case: XSS disabled can't do HTML input
+                        if (typeof e == 'string') {
+                            e = e.split('<').join('&lt;').split('>').join('&gt;');
+                        }
+                        x = x.replace(r[i], e);
+                    }
                 }
 
                 // Execution: set evaluated value into HTMLElement
@@ -1532,7 +1813,7 @@
                 i; // @var i (number), for loop
 
             // Check: if @var ch has length (there's children on element)
-            if (ch != null && ch.length > 1) {
+            if (ch != null && ch.length > 1 && element.__proto__.xss == null) {
                 // Execution: do reactive case with @evaluate by children
                 for (i = 0; i < ch.length; i++) {
                     evaluate(ch[i]);
@@ -1559,8 +1840,8 @@
                 0       0       0        ~ PACMAN ENJOYER THAT LIKES EXPERIMENTAL PROJECT ~
                          0     0        
                 0         0   0          THANKS FOR ALL SUPPORTERS:
-              0   0        0 0           - CONTRIBUTORS (Official Elode.js Team)
-                0           0            - USERS (Elode.js Developers)
+              0   0        0 0           - CONTRIBUTORS (Elode.js Team)
+                0           0            - DEVELOPERS (Elode.js Programmer)
     
     ==============================================================================================
     */
@@ -1744,17 +2025,17 @@
     }
 
     /* 
-    QUERY SEARCH - search query expression like [attr] (expr) {js}
-    using SYMBOL BETWEEN ALGORITHM function for find the symbol then modify it
-
-    @params
-    - source (string): a base of expression source
-    - target (array): a list of expression to be replaced on the source
-    - callback (function): for the result callback and modification purpose
-    - descriptor (function): an option to do searching technique
+        QUERY SEARCH - search query expression like [attr] (expr) {js}
+        using SYMBOL BETWEEN ALGORITHM function for find the symbol then modify it
     
-    @return string
-*/
+        @params
+        - source (string): a base of expression source
+        - target (array): a list of expression to be replaced on the source
+        - callback (function): for the result callback and modification purpose
+        - descriptor (function): an option to do searching technique
+        
+        @return string
+    */
 
     function query_search(source, target, callback, descriptor) {
         // Check: if @param target not included/null then return source (origin)
