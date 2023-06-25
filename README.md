@@ -84,13 +84,13 @@ Elode("h1 Hello World").render();
 
 //Next
 Elode(`div#app 
-  <h1 Hello Elode.js!> 
-  <p Get Started to <b Elode.js> >
+  <h1.title Hello Elode.js!> 
+  <p.sub Get Started to <b Elode.js> >
 `).render();
 /* Result: 
    <div id="app">
-      <h1>Hello Elode.js</h1>
-      <p>Get Started to <b>Elode.js</b></p>
+      <h1 class="title">Hello Elode.js</h1>
+      <p class="sub">Get Started to <b>Elode.js</b></p>
    </div>
 */
 
@@ -98,13 +98,13 @@ Elode(`div#app
 Elode.use('div','h1','p');
 
 div("#app.container",
-  h1("Elode.js"),
-  p("A Unique Way <b Web Development>")
+  h1(".title Elode.js"),
+  p(".sub A Unique Way <b Web Development>")
 ).render();
 /* Result: 
    <div id="app" class="container">
-      <h1>Elode.js</h1>
-      <p>A Unique Way <b>Web Development</b></p>
+      <h1 class="title">Elode.js</h1>
+      <p class="sub">A Unique Way <b>Web Development</b></p>
    </div>
 */
 ```
@@ -119,7 +119,7 @@ use('div','h1','p');
 
 function CardView(title, content){
  return div("#mycard.card-view.some-class",
-    title.clone(), h1("Elode.js"), p(content)
+    title.clone(), h1("[style color:purple] Elode.js"), p(content)
  );
 }
 
@@ -133,7 +133,7 @@ Result:
 <h1>Declarative</h1>
 <div id="mycard" class="card-view some-class">
   <h1>Declarative</h1>
-  <h1>Elode.js</h1>
+  <h1 style="color:purple">Elode.js</h1>
   <p>Get Started to <b>Elode.js</b></p>
 </div>
 ```
@@ -148,7 +148,9 @@ use('ul','li');
 
 let js = ['React','Vue','Svelte','Angular','jQuery','Elode'];
 render(
-   ul( js.map(x => li(x)) )
+   ul( 
+    js.map(x => li(x)) 
+   )
 )
 ```
 Result:
