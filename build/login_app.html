@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login App</title>
+    <script src="js/elode.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div id="loginapp">
+        <div id="login" style="text-align: center;" _e="e02168">
+            <h1>Login</h1><input placeholder="Username" type="text" _e="e12467"><br><input placeholder="Password"
+                type="password" _e="e31841"><br><button _e="e56205"> Login</button><button _e="e62027">Register</button>
+        </div>
+        <div id="home" style="text-align: center;" _e="e032134">
+            <h1>Home</h1>
+            <p _e="e18278">Selamat datang !</p><button _e="e25126">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        /*
+            Elode.js v2.0 Build 
+            Date: 6/27/2023, 7:21:23 PM                    
+
+            Project: Login App
+            Author: equneko
+        */
+
+        window._ = Elode; _.init(document.body);
+        Login = _('_[_e=e02168]');
+        Home = _('_[_e=e032134]');
+        usr = _('_[_e=e12467]');
+        psw = _('_[_e=e31841]');
+
+        _.hook({
+            alf: {
+                login_submit(el) {
+                    if (el.constructor == HTMLInputElement) {
+                        el.on("keydown", function (e) {
+                            if (e.keyCode == 13) {
+                                Login.SubmitLogin();
+                            }
+                        });
+                    } else {
+                        el.on("click", function () {
+                            Login.SubmitLogin();
+                        });
+                    }
+                }
+            }
+        });
+
+        let MyApp = _.app({
+            Login: "#login",
+            Home: "#home"
+        }),
+            ctr = {
+                textAlign: "center"
+            },
+            userlist = [];
+        MyApp.set('Login');
+
+        Login.SubmitLogin = function () {
+            var i, x;
+            for (i = 0; i < userlist.length; i++) {
+                x = userlist[i];
+                if (x.usr == usr.val()) {
+                    if (x.psw == psw.val()) {
+                        Home.prop({
+                            user: x.usr,
+                        });
+                        MyApp.set("Home");
+                        usr.val(""); psw.val("");
+                        return;
+                    } else {
+                        alert("Password Salah!");
+                        return;
+                    }
+                }
+            }
+            alert("Tidak ada user " + usr.val() + ", silahkan register terlebih dahulu!");
+        };
+        usr.on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                Login.SubmitLogin();
+            }
+        }
+        );
+        psw.on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                Login.SubmitLogin();
+            }
+        }
+        );
+        _('_[_e=e56205]').on('click', function () {
+            Login.SubmitLogin();
+        }
+        );
+        _('_[_e=e62027]').on('click', function () {
+            userlist.push({ usr: usr.val(), psw: psw.val() });
+            alert("Sukses Registrasi!");
+        }
+        );
+        _('_[_e=e25126]').on('click', function () {
+            Home.user = "";
+            MyApp.set("Login");
+        }
+        );
+        _('_[_e=e18278]').__react__ = "Selamat datang {{user}}!";
+
+    </script>
+</body>
+
+</html>

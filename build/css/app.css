@@ -1,0 +1,182 @@
+.container {
+  text-align: center;
+  padding: 24px;
+}
+
+.container * {
+  margin: 0;
+}
+
+.btn {
+  margin: 2px;
+  padding: 8px 16px;
+  font-size: 7pt;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #006be6;
+}
+
+.btn:hover {
+  filter: brightness(90%);
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.bgwhite {
+  background-color: white;
+}
+
+.bgblack {
+  background-color: black;
+}
+
+.post {
+  width: 50%;
+  margin: 8px auto;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#comments p {
+  text-align: left;
+  width: 40%;
+  margin: 4px auto;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background-color: #e2e2e2;
+}
+
+.like {
+  background-color: #006be6
+}
+
+.love {
+  background-color: #e80051
+}
+
+.fun {
+  background-color: #ffd900;
+  color: black
+}
+
+.angry {
+  background-color: #de0025
+}
+
+.care {
+  background-color: #02d64c
+}
+
+.gaji {
+  border-collapse: collapse;
+}
+
+.gaji td {
+  border: 1px black solid;
+  padding: 8px 16px;
+}
+
+.gaji tr:nth-of-type(1) {
+  color: white;
+  background-color: #4f17e9;
+}
+
+
+#TodoApp {
+  font-size: 17pt;
+}
+
+#TodoApp input,
+#TodoApp button {
+  font-size: 14pt;
+}
+
+#loginapp {
+  font-size: 14pt;
+}
+
+#loginapp input,
+#loginapp button {
+  font-size: 12pt;
+}
+
+#loginapp * {
+  margin: 8px;
+}
+
+
+#TimerApp {
+  text-align: center;
+}
+
+#TimerApp button {
+  border: none;
+  border-radius: 8px;
+  font-size: 14pt;
+  padding: 9px 21px;
+  margin: 4px;
+  color: white;
+  background-color: #eb0027;
+}
+
+#TimerApp button:hover {
+  filter: brightness(90%);
+}
+
+#TimerApp .start {
+  background-color: #5403a0 !important;
+}
+
+#TimerApp .reset {
+  color: black;
+  background-color: #CFD8DC;
+}
+
+#MyGame{
+  text-align: center;
+}
+
+#board {  
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+  height: 375px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  color: white;
+  background-color: #5403a0;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* TEXT SELECT DISABLED */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  font-size: 14pt;
+  padding: 9px 21px;
+  margin: 4px;
+  color: #000000;
+  background-color: #e7e7e7;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Timer App</title>
+    <script src="js/elode.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div id="TimerApp" _e="e01173">
+        <h1>Timer App</h1>
+        <p _e="e13967">Build in <b _e="e05479">Elode.js</b></p>
+        <h1 _e="e25661">00 : 00 : 00</h1><button _e="e38901">Stop</button><button class="reset"
+            _e="e49034">Reset</button>
+    </div>
+
+    <script>
+        /*
+            Elode.js v2.0 Build 
+            Date: 6/27/2023, 7:21:23 PM                    
+
+            Project: Timer App
+            Author: equneko
+        */
+
+
+        window._ = Elode; _.init(document.body);
+        App = _('_[_e=e01173]');
+        timer = _('_[_e=e25661]');
+        set = _('_[_e=e38901]');
+        App.hours = 0;
+        App.miniute = 0;
+        App.second = 0;
+        App.isStart = false;
+        App.interval = 1000;
+
+        App.setState = function (state) {
+            if (state) {
+                set.txt("Start");
+                App.stop();
+            } else {
+                set.txt("Stop");
+                App.start();
+            }
+            set.toggle("class", "start");
+            timer.toggle("style", "color:red");
+        };
+        (function () {
+            set.on("click", function () {
+                App.setState(App.isStart = !App.isStart);
+            });
+        }).call(App);
+        App.onRender = function () {
+            this.second++;
+            if (this.second >= 59) {
+                this.miniute += 1;
+                this.second = 0;
+            }
+            if (this.miniute >= 59) {
+                this.hours += 1;
+                this.miniute = 0;
+            }
+        };
+        App.__runtime__();
+        set.on('click', function () {
+            App.setState(App.isStart = !App.isStart);
+        }
+        );
+        _('_[_e=e49034]').on('click', function () {
+            App.prop({ hours: 0, miniute: 0, second: 0 });
+        }
+        );
+        _('_[_e=e25661]').__react__ = 
+        "{{hours} <= 9 ? '0'+{hours}:{hours}}  : {{miniute} <= 9 ? '0'+{miniute}:{miniute}} : {{second} <= 9 ? '0'+{second}:{second}}";
+
+
+    </script>
+</body>
+
+</html>

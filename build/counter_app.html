@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Counter App</title>
+    <script src="js/elode.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div>
+        <h1>Counter App</h1>
+        <p _e="e14853">Simple Counter Application Build In <b _e="e03939">Elode.js</b></p>
+        <button style="font-size:18pt" _e="e27209">Count 0 time</button>
+    </div>
+
+    <script>
+        /*
+            Elode.js v2.0 Build 
+            Date: 6/27/2023, 7:07:40 PM                    
+
+            Project: Counter App
+            Author: equneko
+        */
+
+        window._ = Elode; _.init(document.body);
+        _('_[_e=e27209]').count = 0;
+        _('_[_e=e27209]').on('click', function () { this.count++; });
+        _('_[_e=e27209]').__react__ = "Count {{count}} {{count} <= 1 ? 'time':'times'}";
+
+    </script>
+</body>
+
+</html>
