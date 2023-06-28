@@ -7,13 +7,6 @@
 Elode("div <h1 My Website> <p Welcome to my website!>").render();
 
 // Next
-Elode.app("div",[
-    "h1 Gabut Blogger",
-    "p Today we have an article...",
-    "button Read"
-]).render();
-
-// Pro
 Elode(["marquee",
     "p This is an Advertisement Marquee...",
     Elode("button Request Ad {{count}}x",{

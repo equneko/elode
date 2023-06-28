@@ -8,6 +8,6 @@ Elode.use('div','h1','p');
 div(
 
     h1("Hello use() HTML Tag"),
-    p("Using HTML Tag replacement directly on Javascript")
+    p("Using HTML Tag replacement directly on JavaScript")
 
 ).render();

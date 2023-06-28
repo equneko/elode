@@ -1,4 +1,4 @@
-const { app, use, hook, render, XSS } = Elode;
+const { app, use, hook, render } = Elode;
 
 use('div', 'h1', 'p', 'input', 'button');
 
@@ -24,14 +24,14 @@ let MyApp = app({
     Login: "#login",
     Home: "#home"
 }),
-    ctr = {
-        textAlign: "center"
-    },
-    userlist = [];
+ctr = {
+    textAlign: "center"
+},
+userlist = [];
 
 render(
-    div("[id loginapp]",
-        Login = div("[id login]",
+    div("#loginapp",
+        Login = div("#login",
             h1("Login"),
             usr = input("[placeholder Username | type text | alf:login_submit]"), "br",
             psw = input("[placeholder Password | type password | alf:login_submit]"), "br",
@@ -53,8 +53,7 @@ render(
                                 Home.prop({
                                     user: x.usr,
                                 });
-                                Home.react();
-                                MyApp.render("Home");
+                                MyApp.set("Home");
                                 usr.val(""); psw.val("");
                                 return;
                             } else {
@@ -67,19 +66,19 @@ render(
                 }
             }),
 
-        Home = div("[id home]",
+        Home = div("#home",
             h1("Home"),
-            "p Selamat datang {{user}}!",
+            p("Selamat datang {{user}}!"),
             button("Logout", {
                 onclick() {
                     Home.user = "";
-                    MyApp.render("Login");
+                    MyApp.set("Login");
                 }
             }),
-            {
-                style: ctr
-            })
+        {
+            style: ctr
+        })
     )
 );
 
-MyApp.render("Login");
+MyApp.set("Login");

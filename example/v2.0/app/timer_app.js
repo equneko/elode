@@ -3,14 +3,14 @@ const { use, render } = Elode;
 use('div', 'h1', 'p', 'button');
 
 render(
-    App = div("[id TimerApp]",
+    App = div("#TimerApp",
         h1("Timer App"),
         p("Build in <b Elode.js>"),
         timer = h1("{{hours} <= 9 ? '0'+{hours}:{hours}} " +
             " : {{miniute} <= 9 ? '0'+{miniute}:{miniute}}" +
             " : {{second} <= 9 ? '0'+{second}:{second}}"),
         set = button("Stop"),
-        button("[class reset] Reset", {
+        button(".reset Reset", {
             onclick() {
                 App.prop({ hours: 0, miniute: 0, second: 0 });
             }

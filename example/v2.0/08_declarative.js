@@ -35,7 +35,7 @@ Elode.use('div','h3','p',{btn:'button[style margin-right:8px]'});
 function SosmedPost(title, caption){
     return div(
         h3(title),
-        div("",{
+        div({
             style:{
                 width:"128px", height:"128px",
                 border:"1px solid black",
