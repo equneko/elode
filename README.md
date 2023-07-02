@@ -3,13 +3,12 @@
 Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
 
 [![](https://komarev.com/ghpvc/?username=equneko&label=Visit%20Count&color=311B92&style=flat)]()
-[![](https://img.shields.io/badge/Elode.js-v2.0%20(07/06/2023)-indigo)]()
 [![](https://img.shields.io/badge/Experimental%20Project-black)]()
 [![](https://img.shields.io/badge/Unique-purple)]()
 [![](https://img.shields.io/badge/Declarative-red)]()
 [![](https://img.shields.io/badge/Lightweight-yellow)]()
-[![](https://img.shields.io/badge/Front%20End-blue)]()
-[![](https://img.shields.io/badge/Reactive-green)]()
+[![](https://img.shields.io/badge/Reactive-blue)]()
+[![](https://img.shields.io/badge/Front%20End-green)]()
 
 <img width="800" src="https://github.com/equneko/elode/blob/main/res/images/brand.png"/>
 
