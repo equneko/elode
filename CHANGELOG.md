@@ -180,7 +180,7 @@ a simplest way to do repeative functions or it's seems like "Directive/Shortcut"
   h1("[:def name='Alf'] Your name's {{name}}")
 
   // Data Binding
-  h1("[:def bill:$user.payment] The current billing's {{bill} * 2}")
+  h1("[:def bill:$user.payment] The current billing's { {bill} * 2 }")
 
   // Model Control
   h1("Your biodata's {{bio}}")
