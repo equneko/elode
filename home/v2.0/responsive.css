@@ -1,0 +1,239 @@
+[show950]{
+    display:none!important;
+}
+@media screen and (min-width:1200px){
+    .devbadge{
+        padding:0em 15em 4em 15em!important;
+    }
+}
+@media screen and (max-width:1171px){
+    #Search{
+        display: none!important;
+    }
+    .preview > div > a{
+        margin: 1em 0em!important;
+    }
+}
+@media screen and (max-width:1080px){
+    .react-vct{
+        position: relative;
+        left: -50px;
+    }
+}
+@media screen and (max-width:950px){
+    .promote{
+        padding:0em 2em;
+    }
+    .promote p{
+        font-size: 9pt!important;
+    }
+    [hide950]{
+        display: none!important;
+    }
+    [show950]{
+        display:block!important;
+    }
+    .preview{
+        padding:0!important;
+        display:block;
+    }
+    .react-vct{
+        position:'';
+        left:0;
+    }
+}
+@media screen and (max-width:900px){
+    .content{
+        padding: 3em 2em!important;
+    }
+    .content h1{
+        font-size: 35pt;
+    }
+    .content p{
+        font-size: 14pt;
+    }
+    .carbon {
+        left: -20px;
+    }
+    .devbadge{
+        padding: 1em 2em!important;
+    }
+}
+@media screen and (max-width:750px){
+    .content h1{
+        font-size: 30pt;
+    }
+    .content p{
+        font-size: 12pt;
+    }
+    .devbadge{
+        padding: 1em 2em!important;
+    }
+    .devbadge > img{
+        width: 4em!important;
+        height: 4em!important;
+    }
+}
+@media screen and (max-width:680px){
+    .sideview{
+        width:30%!important;
+    }
+    .ctr {
+        padding: 0em 1em;
+    }
+    .ctr h1{
+        font-size: 35pt;
+    }
+    .ctr p{
+        font-size: 12pt;
+    }
+    .browser-title {
+        font-size: 18pt!important;
+    }
+    .browser-list {
+        margin-top: -1em!important;
+    }
+    .browser-list > img{
+        width: 5em!important;
+        height: 5em!important;
+    }
+    .content p{
+        font-size: 10pt;
+    }
+}
+@media screen and (max-width:550px){
+    .sideview{
+        width:40%!important;
+    }
+    .content > p > br{
+        display:none;
+    }
+}
+@media screen and (max-width:500px){
+    .promote p{
+        font-size: 8pt!important;
+    }
+    [hide500]{
+        display: none!important;
+    }
+    .ctr > a, .ctr > div > a{
+        display: block;
+        margin: 1em 2em;
+    }
+    .spA{
+        margin-bottom: -2.5em!important;
+    }
+    .spB{
+        margin-bottom: 2em!important;
+    }
+    .carbon {
+        left: -80px;
+    }
+}
+@media screen and (max-width:450px){
+    .sideview{
+        width:50%!important;
+    }
+    .promote p{
+        font-size: 7pt!important;
+    }
+    .logo{
+        width: 100px;
+    }
+    .ctr h1{
+        font-size: 30pt;
+    }
+    .content h1{
+        font-size: 25pt;
+    }
+    .content > div > a{
+        font-size: 10pt!important;
+    }
+    .preview > div > a{
+        margin: 1em 0em!important;
+    }
+    .carbon {
+        left: 0px;
+        overflow: auto;
+    }
+    .react-vct a{
+        margin: 0em 1em!important;
+    }
+    .letsgoo img{
+        width: 300px!important;
+    }
+    .devbadge > img{
+        width: 3em!important;
+        height: 3em!important;
+    }
+}
+@media screen and (max-width:430px){
+    .react-vct input{
+        padding: 0.8em 2em!important;
+    }
+    .react-vct h1{
+        font-size: 17pt!important;
+    }
+    .react-vct p{
+        font-size: 9pt!important;
+    }
+}
+@media screen and (max-width:400px){
+    .react-vct input{
+        font-size: 8pt!important;
+    }
+    .react-vct a{
+        font-size: 8pt!important;
+    }
+    .get-elode{
+        margin: 1.5em 0em!important;
+    }
+}
+@media screen and (max-width:350px){
+    .ctr {
+        margin-top: 120px;
+    }
+    .ctr h1{
+        font-size: 25pt;
+    }
+    .ctr p{
+        font-size: 10pt;
+    }
+    .ctr > a, .ctr > div > a{
+        font-size: 10pt;
+    }
+    div[style="margin-bottom:3em"]{
+        margin-bottom: 1em!important;
+    }
+    .react-vct input{
+        font-size: 7pt!important;
+    }
+    .react-vct a{
+        font-size: 7pt!important;
+    }
+    .letsgoo img{
+        width: 250px!important;
+    }
+    .devbadge > img{
+        width: 2em!important;
+        height: 2em!important;
+    }
+    #footer p{
+        font-size: 8pt!important;
+    }
+}
+@media screen and (max-width:320px){
+    .search{
+        display: none!important;
+    }
+}
+@media screen and (max-width:315px){
+    .content > div > a{
+        font-size: 9pt!important;
+    }
+}
+@media screen and (max-width:299px){
+    * {
+        display:none!important;
+    }
+}
