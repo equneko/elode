@@ -10,7 +10,7 @@ Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and 
 [![](https://img.shields.io/badge/Reactive-blue)]()
 [![](https://img.shields.io/badge/Front%20End-green)]()
 
-<img width="800" src="https://github.com/equneko/elode/blob/main/res/images/brand.png"/>
+<img width="800" src="https://github.com/equneko/elode/blob/main/res/images/homepage.png"/>
 
 ## Elode.js Lite (Lightweight-Edition)
 **Elode.js Lite** comes with a minimalist feature for do **Model View Controller** with reactivity and default composer functions.
@@ -21,7 +21,6 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 - Cycle (Elode.js + Firebase) https://alf-cycle-app.web.app
 - SiKochengOren (Elode.js + ChatGPT) https://sikochengoren.netlify.app (Server Down)
 - Blueplan (Elode.js) https://blueplan.netlify.app
-- Selamat Ultah Bro (Elode.js) https://selamat-ultah-broo.netlify.app
 
 ## Install
 - Download Release Versions
