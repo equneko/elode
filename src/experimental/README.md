@@ -1,5 +1,5 @@
-# Experimental Javascript Libraries/Frameworks
-There's some experimental when i was learning Javascript
+# Experimental JavaScript Libraries/Frameworks
+There's some experimental when i was learning JavaScript
 from beginner.
 
 - Epotion.js - Injection HTML Templating
