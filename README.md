@@ -203,7 +203,7 @@ use('div','h1','p')
 render(
   div("#app",
      h1("Hello ES6"),
-     p("Elode.js ES Module Version"),
+     p("Elode.js ES6 Module Version"),
      Counter(1000)
   )
 )
