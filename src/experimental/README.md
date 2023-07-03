@@ -6,4 +6,4 @@ from beginner.
 - Lontong.js - Indonesian Food :v
 
 ... And more experiment! <br>
-Learning how Javascript working with HTML CSS
+Learning how JavaScript working with HTML CSS
