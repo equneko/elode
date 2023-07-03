@@ -34,6 +34,10 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 ```xml
 <script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.lite.js"></script>
 ```
+- ES6 Module:
+```javascript
+import { Elode } from "https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.esm.js"
+```
 
 ## Playground
 Try Elode.js (online) with 
@@ -184,6 +188,25 @@ render(
 Result:
 ```html
 <button>You Count 0</button>
+```
+
+# ES6 Module
+Elode.js ES6 Module implementation in v2.0 that we have include elode.esm.js version
+for import/export feature using ES6 Module.
+
+```javascript
+import { use, render } from "https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.esm.js"
+import { Counter } from "./Component.js"
+
+use('div','h1','p')
+
+render(
+  div("#app",
+     h1("Hello ES6"),
+     p("Elode.js ES Module Version"),
+     Counter(1000)
+  )
+)
 ```
 
 # What's The Next?
