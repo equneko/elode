@@ -9,6 +9,7 @@ by using this you just edit `src/app.js` and start coding!
     - elode.css
 - src
     - app.js
+- icon.ico
 - index.html
 
 ## How to start development?
