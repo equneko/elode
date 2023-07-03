@@ -4,7 +4,7 @@ with bundled script. But something this could be hard to do
 
 ## How it works?
 Just copy paste the bundled script from Elode.js build() feature <br>
-and embed with <link> and <script> on your HTML file.
+and embed with < link > and < script > on your HTML file.
 
 ## The Plan
 Need more experiment to do with this feature. Cause there's <br>
