@@ -1,4 +1,4 @@
-# Example - Some example of Elode.js
+# Example
 There's some test example that can be a sample <br>
 start from first development v0.09 and updated to v2.0
 
