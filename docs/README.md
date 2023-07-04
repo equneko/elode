@@ -131,7 +131,7 @@ Just a little bit of some actions inspired from jQuery. Here's all of **Elode.js
 - `.delay(time, callback)` - Set delay/interval by the `time` for calling the `callback`
 - `.destroy(element)` - Remove the Element's child by spesific the `element`
 - `.destroy()` - Remove self Element from the root.
-- `.get(index)` - Get the Child Element by spesific `index` 0 start at first child.
+- `.get(index)` - Get the Child Element by spesific `index` 0 is start at first child.
 - `.get(query)` - Get the Child Element by spesific `query` as a querySelector().
 - `.hide()` - Hide the Element from the root.
 - `.html(code)` - Set the innerHTML of Element by the `code`
@@ -139,8 +139,8 @@ Just a little bit of some actions inspired from jQuery. Here's all of **Elode.js
 - `.memo(keys)` - Record the memorable data `keys` as a reactive `previous` and `next` data.
 - `.on(event,callback)` - Add an EventListener to your Element with Reactive-Feature.
 - `.prop(props)` - Set the Properties with `props` and then update the changes.
-- `.react()` - Manual reactive update changes.
-- `.render(root)` - Procedure to make Element, rendering to `root` default: <body></body>
+- `.react()` - Manual reactive update the changes.
+- `.render(root)` - Procedure to make Element, rendering to the `root` default: `<body></body>`
 - `.seen(visible)` - Toggle the visibility of Element by the `visible` boolean.
 - `.set(new,old)` - Replace the `old` Child Element by the `new` Child Element.
 - `.show()` - Show the Element from the root.
