@@ -113,4 +113,39 @@ symbolic scope with curly brackets `{ javascript }` and it's actually javascript
 The **Self Reactive** is a reactive-scope with self data, like **Attributes** and **Properties** <br>
 symbolic scope with double curly brackets `{{ properties }}` and it's actually HTMLElement's DOM-Prototypes
 
-
+## Action
+After creating the **HTMLElement**. Elode.js can composing the **Element** with an **Action**. <br>
+Lets we talk about **jQuery Action**. it's seems like that, but not all implementation Elode.js have. <br>
+Just a little bit of some actions inspired from jQuery. Here's all of **Elode.js Actions** <br>
+- `.add(element)` - Add some HTMLElement into the Element.
+- `.anim.fade(visibility,time)` - Animate with fade `(visibility = true/false)` and `(time = number)`.
+- `.anim.fadeIn(time) / .fadeOut(time)` - Same as the action above, but with spesific visibility.
+- `.attr(name,value)` - Set the Element's attribute with spesific `name` and `value`.
+- `.attr(name)` - Get the Element's attribute with spesific `name`.
+- `.cell(index)` - Scope the root of Element with `index`. 0 is a top of root-scope.
+- `.class(value)` - Set the Element's classList with `value`.
+- `.class()` - Get the Element's classList, which can be `.add()` or `.remove()`
+- `.clone(props)` - Clone the Element with the `props` as a new Properties.
+- `.css(style)` - CSS code implementation of `style` Element attribute.
+- `.css()` - Get the `style` attribute from Element.
+- `.delay(time, callback)` - Set delay/interval by the `time` for calling the `callback`
+- `.destroy(element)` - Remove the Element's child by spesific the `element`
+- `.destroy()` - Remove self Element from the root.
+- `.get(index)` - Get the Child Element by spesific `index` 0 start at first child.
+- `.get(query)` - Get the Child Element by spesific `query` as a querySelector().
+- `.hide()` - Hide the Element from the root.
+- `.html(code)` - Set the innerHTML of Element by the `code`
+- `.html()` - Get the outerHTML of Element.
+- `.memo(keys)` - Record the memorable data `keys` as a reactive `previous` and `next` data.
+- `.on(event,callback)` - Add an EventListener to your Element with Reactive-Feature.
+- `.prop(props)` - Set the Properties with `props` and then update the changes.
+- `.react()` - Manual reactive update changes.
+- `.render(root)` - Procedure to make Element, rendering to `root` default: <body></body>
+- `.seen(visible)` - Toggle the visibility of Element by the `visible` boolean.
+- `.set(new,old)` - Replace the `old` Child Element by the `new` Child Element.
+- `.show()` - Show the Element from the root.
+- `.toggle(attribute,value)` - Toggle the spesific `attribute` with some `value`. it can be `string` or `array`.
+- `.txt(text)` - Set the innerText of Element by `text`.
+- `.txt()` - Get the innerText of Element.
+- `.val(value)` - Set the value of Element by `value`.
+- `.val()` - Get the value of Element.
