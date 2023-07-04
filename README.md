@@ -71,7 +71,11 @@ Try Elode.js (online) with
 
 ## CSS Compabilities
 
+![TailwindCSS](https://img.icons8.com/?size=128&id=4PiNHtUJVbLs&format=png)
 <img width="128" src="https://yt3.googleusercontent.com/dW6to0x5Crmeh7yi-YPLcQRqVrBtx2BSh8eoKTJbE8NbjloQ0sqlmdszIlxokJU_97-ndOt_=s900-c-k-c0x00ffffff-no-rj"></img>
+- Tailwind.css (Tested) https://tailwindcss.com/
+<br> Example 1 - https://codepen.io/equneko/pen/rNQwKVa
+
 - w3.css (Tested) https://www.w3schools.com/w3css/defaulT.asp
 
 # Unique ![Syntax](https://img.icons8.com/color/36/source-code.png)
