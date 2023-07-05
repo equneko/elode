@@ -1,7 +1,7 @@
 <img src="https://github.com/equneko/elode/blob/main/res/images/logo.png?raw=true" width="128"></img>
 # Get Started to Elode.js
-Welcome to the **Elode.js Documentation!** here you can learn Elode.js <br>
-There's a Tutorial, Reference, Example and Tips. Lets gooo!
+Welcome to **Elode.js!** learn with a unique way web development! <br>
+make your experience becomes different and interesting...
 
 ## Hello World
 Here's the basic procedure to make a simple app "Hello World" <br>
@@ -50,7 +50,7 @@ and Its will becomes to **HTMLElement** which can be manipulate on JavaScript by
 - `.render()` called and detect which can be render into `<body></body>`
 
 ## Data Binding
-Data Binding are **HTML-DOM prototypes** that can be manipulate data changes in your HTMLElement. <br>
+Data Binding are **HTML-DOM prototypes** that manipulate data changes in your HTMLElement. <br>
 Elode.js have two-types **Data Binding** that's **Attributes** and **Properties** for working on data
 
 **Attributes**
