@@ -1,6 +1,6 @@
-const { app, use, ref, hook, init, render, xss } = Elode,
+const { app, use, ref, hook, init, render, xss } = Elode;
 
-    Logo = "res/images/logo.png";
+const Logo = "res/images/logo.png";
 
 use('div', 'h1', 'p', 'input', 'span', 'ul', 'li', 'img', {
     link: 'a.btn[href #]'
@@ -10,7 +10,7 @@ ref({
     darkSpan: span(".medium.fa.fa-moon-o"),
     sideSpan: span(".medium.fa.fa-bars"),
     darkMode: false,
-    stargazer: '',
+    stargazer: ''
 })
 
 hook({
@@ -54,9 +54,9 @@ render(
             Promote = div(".promote.bg-violet.white",
                 p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
                     "span Support this experimental project by ",
-                    "a[:link https://github.com/equneko/elode/stargazers].white.hover <b Give a star at Github <span.fa.fa-github>>",
+                    "a[:link https://github.com/equneko/elode/stargazers |aria-label Elode.js Github].white.hover <b Give a star at Github <span.fa.fa-github>>",
                     "span  or you can join our ",
-                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH].white.hover <b <span.fa.fa-comments> Community Team!>")
+                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH |aria-label Elode.js Community].white.hover <b <span.fa.fa-comments> Community Team!>")
             ),
             Nav = NavBar({
                 title: "Elode.js"
@@ -85,7 +85,7 @@ render(
             link2: "https://github.com/equneko/elode#unique-"
         }, [
             div(".carbon",
-                img("[src res/images/carbon1.png|style width:700px]")
+                img("[src res/images/carbon1.png|style width:700px | alt Example of Carbon #1]")
             ),
         ]),
 
@@ -102,7 +102,7 @@ render(
         }, [
             div(".preview.flex[style padding:0em 2em]",
                 div(".carbon",
-                    img("[src res/images/carbon2.png|style width:600px;transform: rotate(1deg)]")
+                    img("[src res/images/carbon2.png | alt Example of Carbon #2|style width:600px;transform: rotate(1deg)]")
                 ),
                 div(".center[style width:100%]",
                     A = ExampleButton(1280),
@@ -130,7 +130,7 @@ render(
                     )
                 ),
                 div(".carbon",
-                    img("[src res/images/carbon3.png|style width:600px;transform: rotate(-1deg)]")
+                    img("[src res/images/carbon3.png | alt Example of Carbon #3|style width:600px;transform: rotate(-1deg)]")
                 ),
             )
         ]),
@@ -149,20 +149,20 @@ render(
             div(".preview.flex[style padding:0em 2em]",
 
                 div(".carbon",
-                    img("[src res/images/carbon4.png|style width:600px;transform: rotate(1deg)]")
+                    img("[src res/images/carbon4.png | alt Example of Carbon #4|style width:600px;transform: rotate(1deg)]")
                 ),
                 div(".center[style width:100%]",
                     App = div(".react-vct.bg-white[style padding: 3em 2em;border-radius: 1em;margin:2em 0em]",
                         h1(".rct[style margin:0] Hello, {{name} == '' ? 'Alf Equilfe':{name}}"),
                         p(".rct Level: {{level}} | Health Point: {{hp}}"),
                         input(".btn.bg-wheat.dark[name example|placeholder Your Name|style padding:0.8em 4em]", {
-                            oninput() {
+                            oninput:function() {
                                 App.name = this.val();
                             }
                         }),
                         link(".sha-test.shahover.bg-blue[style " +
-                            "display:block;font-size:12pt;margin: 0em 6em] Upgrade", {
-                            onclick(e) { e.preventDefault(); App.level++; App.hp += App.level * 2; }
+                            "display:block;font-size:12pt;margin: 0em 6em ] Upgrade", {
+                            onclick:function(e) { e.preventDefault(); App.level++; App.hp += App.level * 2; }
                         })
 
                         , { name: "Alf Equilfe", level: 0, hp: 100 }
@@ -187,8 +187,8 @@ render(
                     "h1.rct Hello {{user}}",
                     "p.rct Message: {{message}}",
                     link(".sha-test.shahover.bg-green[style " +
-                        "display:block;font-size:12pt;margin: 0em 6em] Login", {
-                        onclick(e) { e.preventDefault(); this.root.login(); }
+                        "display:block;font-size:12pt;margin: 0em 6em ] Login", {
+                        onclick:function(e) { e.preventDefault(); this.root.login(); }
                     })
                 ,{
                     user:"SiKochengOren",
@@ -198,7 +198,7 @@ render(
                     }
                 }),
                 div(".carbon",
-                    img("[src res/images/carbon5.png|style width:600px;transform: rotate(-1deg)]")
+                    img("[src res/images/carbon5.png | alt Example of Carbon #5 |style width:600px;transform: rotate(-1deg)]")
                 ),
             )
         ]),
@@ -215,8 +215,8 @@ render(
 
         GetElode = div(".content.center[style margin: -4em 0em]",
             link(".get-elode.sha-test.shahover.bg-violet[style " +
-                "display:block;font-size:17pt;margin: 1.5em 2em] Get <span.fa.fa-code> Elode.js", {
-                onclick(e) {
+                "display:block;font-size:17pt;margin: 1.5em 2em | aria-label Copy Paste CDN Links of Elode.js] Get <span.fa.fa-code> Elode.js", {
+                onclick:function(e) {
                     e.preventDefault();
                     navigator.clipboard.writeText("<script src=\"https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.min.js\"></script>");
                     LGooo.letsgoo();
@@ -242,16 +242,16 @@ render(
 
         "br",
         [
-            "[:link https://github.com/equneko/elode] <span.fa.fa-github>",
-            "[:link https://codepen.io/equneko/] <span.fa.fa-codepen>",
-            "[:link https://web.facebook.com/alfequneko19] <span.fa.fa-facebook-official>",
-            "[:link https://instagram.com/alfequneko19] <span.fa.fa-instagram>",
-            "[:link https://twitter.com/alfequneko19] <span.fa.fa-twitter>",
-            "[:link https://m.youtube.com/@alfequilfe] <span.fa.fa-youtube-play>",
-            "[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH] <span.fa.fa-whatsapp>"
+            "[:link https://github.com/equneko/elode ][aria-label Elode.js Github] <span.fa.fa-github>",
+            "[:link https://codepen.io/equneko/ ][aria-label Elode.js CodePen] <span.fa.fa-codepen>",
+            "[:link https://web.facebook.com/alfequneko19 ][aria-label Alf Equilfe's Facebook] <span.fa.fa-facebook-official>",
+            "[:link https://instagram.com/alfequneko19 ][aria-label Alf Equilfe's Instagram] <span.fa.fa-instagram>",
+            "[:link https://twitter.com/alfequneko19 ][aria-label Alf Equilfe's Twitter] <span.fa.fa-twitter>",
+            "[:link https://m.youtube.com/@alfequilfe ][aria-label Alf Equilfe's Youtube] <span.fa.fa-youtube-play>",
+            "[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH ][aria-label Elode.js Community] <span.fa.fa-whatsapp>"
 
         ].map(
-            x => link(".navlist.medium.menu.bg-trans.dark.bottom-link[style margin:0.3em -0.5em] " + x)
+            function(x){ return link(".navlist.medium.menu.bg-trans.dark.bottom-link[style margin:0.3em -0.5em] " + x) }
         )
     )
 )

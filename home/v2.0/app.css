@@ -274,10 +274,10 @@ ol {
     background-color: #202020;
     border: none;
     border-radius: 2em;
-    font-family: inter-r;
     font-weight: 700;
     padding: 0.7em 1.5em 0.7em 1.5em;
     margin: 1em 0.5em;
+    transition: opacity 200ms;
 }
 
 .btn:hover {
@@ -312,16 +312,19 @@ ol {
     width: 7em;
     height: 7em;
     background-color: #e9e9e9;
+    transition: transform 200ms;
 }
 .round-img:hover {
     transform: scale(1.2) rotate(12deg);
 }
 
 .carbon{
+    transition: transform 200ms;
     position: relative;
 }
 .carbon:hover{
     transform: scale(1.1)!important;
+    filter: brightness(150%);
 }
 .bottom-link{
     padding:0.2em 0.5em 0.2em 0.5em!important;
@@ -333,5 +336,5 @@ ol {
 }
 
 * {
-    transition: color 500ms;
+    transition: color,background-color 200ms;
 }
