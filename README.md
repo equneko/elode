@@ -10,6 +10,7 @@ Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and 
 [![](https://img.shields.io/badge/Reactive-blue)]()
 [![](https://img.shields.io/badge/Front%20End-green)]()
 
+## https://elode.js.org
 <img width="800" src="https://github.com/equneko/elode/blob/main/res/images/homepage.png"/>
 
 ## Elode.js Lite (Lightweight-Edition)
@@ -24,19 +25,19 @@ Now you can make a simple and minimalist web application using the **Lite Versio
 
 ## Install
 - Download Release Versions
-- Using CDN JSDelivr:
+- Using CDN:
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.js"></script>
+<script src="https://elode.js.org/src/v2.0/elode.js"></script>
 ```
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.min.js"></script>
+<script src="https://elode.js.org/src/v2.0/elode.min.js"></script>
 ```
 ```xml
-<script src="https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.lite.js"></script>
+<script src="https://elode.js.org/src/v2.0/elode.lite.js"></script>
 ```
 - ES6 Module:
 ```javascript
-import { Elode } from "https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.esm.js"
+import { Elode } from "https://elode.js.org/src/v2.0/elode.esm.js"
 ```
 
 ## Playground
@@ -54,12 +55,13 @@ Try Elode.js (online) with
  ![Edge](https://img.icons8.com/color/128/internet-explorer.png)
  ![Android Webview](https://img.icons8.com/color/128/android-os.png)
  
- - Chrome (Full Supported v78+)
- - Edge (Latest Version)
- - Firefox (Latest Version)
+ - Chrome (Version 23 - 114)
+ - Edge (Version 12 - 113)
+ - Firefox (Version 21 - 114)
+ - Opera (Version 100+)
+ - Safari (Version 16.5+)
  - Internet Explorer (IE9+ / IE11 Stable)
  - Android WebBrowser (v4.4+ / v5.0 Stable)
- - Opera, Safari and IOS WebBrowser (Not Tested)
  
 ## JS Compabilities
 ![Firebase](https://img.icons8.com/?size=128&id=62452&format=png)
@@ -199,7 +201,7 @@ Elode.js ES6 Module implementation in v2.0 that we have include elode.esm.js ver
 for import/export feature using ES6 Module.
 
 ```javascript
-import { use, render } from "https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.esm.js"
+import { use, render } from "https://elode.js.org/src/v2.0/elode.esm.js"
 import { Counter } from "./Component.js"
 
 use('div','h1','p')
@@ -226,3 +228,7 @@ All embedded icon resources in this repository are platformed by **Icons8.com** 
 Except the one, that's official **Elode.js** icon by the Author <br/>
 ![Icons8](https://img.icons8.com/color/256/icons8-new-logo.png)
 
+# Homepage Subdomain By [JS.ORG](https://js.org)
+Thanks to **JS.ORG** for their free subdomain service for **elode.js.org** <br/>
+now we have homepage link direct like an official library/framework homepage :v <br/><br/>
+![JS.ORG](https://avatars.githubusercontent.com/u/11666794?s=212&v=4)
