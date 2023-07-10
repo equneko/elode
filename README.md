@@ -88,19 +88,12 @@ but you can **write quickly, different and less-code** if you understand it.
 ```javascript
 //Basic
 Elode("h1 Hello World").render();
-//result: <h1>Hello World</h1>
 
 //Next
 Elode(`div#app 
   <h1.title Hello Elode.js!> 
   <p.sub Get Started to <b Elode.js> >
 `).render();
-/* Result: 
-   <div id="app">
-      <h1 class="title">Hello Elode.js</h1>
-      <p class="sub">Get Started to <b>Elode.js</b></p>
-   </div>
-*/
 
 //Extended
 Elode.use('div','h1','p');
@@ -109,14 +102,23 @@ div("#app.container",
   h1(".title Elode.js"),
   p(".sub A Unique Way <b Web Development>")
 ).render();
-/* Result: 
-   <div id="app" class="container">
-      <h1 class="title">Elode.js</h1>
-      <p class="sub">A Unique Way <b>Web Development</b></p>
-   </div>
-*/
 ```
-
+Result:
+```html
+<h1>Hello World</h1>
+```
+```html
+<div id="app">
+  <h1 class="title">Hello Elode.js</h1>
+  <p class="sub">Get Started to <b>Elode.js</b></p>
+</div>
+```
+```html
+<div id="app" class="container">
+  <h1 class="title">Elode.js</h1>
+  <p class="sub">A Unique Way <b>Web Development</b></p>
+</div>
+```
 # Declarative ![Element](https://img.icons8.com/color/32/dashboard-layout.png)
 Based on **HTML-DOM**, build your own Component/Element friendly with **Standard Web Development**. 
 How it works? Elode.js includes their procedure into **DOM** that cause the Component/Element's same as **HTMLElement**.
