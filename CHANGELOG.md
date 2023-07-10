@@ -1,5 +1,5 @@
 # Elode.js v2.0
-( Release: 28-06-2023 ) ( size: 108kb | min-size: 28kb )
+( Release: 28-06-2023 ) ( size: 94kb | min-size: 22kb )
 
 # Elode.js - BIG UPDATE!!!
 **Elode.js** have some big changes in this version! There's new feature, bug fixes, deprecated changes and
