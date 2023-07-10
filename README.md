@@ -1,8 +1,8 @@
 # <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img> Elode.js - A Unique Way Web Development
 **ELODE** (**EL**ement **O**n **DE**velopment) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
-Based on JavaScript ES5 (EcmaScript 2009) that can support old web browsers and also support with other javascript libraries/frameworks
+Based on **JavaScript ES5 (EcmaScript 2009)** that can support old web browsers and also support with other javascript libraries/frameworks
 
-[![](https://komarev.com/ghpvc/?username=equneko&label=Visit%20Count&color=311B92&style=flat)]()
+[![](https://komarev.com/ghpvc/?username=equneko&label=Views%20Count&color=311B92&style=flat)]()
 [![](https://img.shields.io/badge/Experimental%20Project-black)]()
 [![](https://img.shields.io/badge/Unique-purple)]()
 [![](https://img.shields.io/badge/Declarative-red)]()
