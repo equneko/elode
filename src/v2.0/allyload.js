@@ -37,16 +37,10 @@ var AllyLoad = function () {
             el.src = source;
             el.type = custom.js_type;
 
-            if(custom.head){
-                document.head.appendChild(el);
-                return;
-            }
-
-            bef = document.body.getElementsByTagName('script');
-            if (bef.length > 1) {
-                document.body.insertBefore(el,bef[0]);
-            } else {
+            if(custom.body){
                 document.body.appendChild(el);
+            }else{
+                document.head.appendChild(el);
             }
 
         } else {
