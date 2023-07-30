@@ -244,7 +244,7 @@ render(
                 "display:block;font-size:17pt;margin: 1.5em 2em | aria-label Copy Paste CDN Links of Elode.js] Get <span.fa.fa-code> Elode.js", {
                 onclick:function(e) {
                     e.preventDefault();
-                    navigator.clipboard.writeText("<script src=\"https://cdn.jsdelivr.net/gh/equneko/elode/src/v2.0/elode.min.js\"></script>");
+                    navigator.clipboard.writeText("<script src=\"https://elode.js.org/src/v2.0/elode.min.js\"></script>");
                     LGooo.letsgoo();
                 }
             }),
