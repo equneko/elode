@@ -19,7 +19,7 @@ devs = [
     "!res/images/mark.jpg",
     "equneko",
     "!res/images/sikochengoren.jpg",
-    "!blob:https://web.whatsapp.com/86e68d9d-82c8-4209-a37f-7655a593ab57",
+    "!res/images/komeng.jpg",
     "udinesia325",
     "DimasAdiPutra",
     "ezmemoar",
