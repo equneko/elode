@@ -33,7 +33,7 @@ that helps you to learn this experimental project
 ## Action
 - [`.add(element)`]() - Add some HTMLElement into the Element.
 - [`.anim.fade(visibility,time)`]() - Animate with fade `(visibility = true/false)` and `(time = number)`.
-  [`.anim.fadeIn(time).fadeOut(time)`]() - Same as the action above, but with spesific visibility.
+- [`.anim.fadeIn(time).fadeOut(time)`]() - Same as the action above, but with spesific visibility.
 - [`.attr(name,value)`]() - Set the Element's attribute with spesific `name` and `value`.
 - [`.attr(name)`]() - Get the Element's attribute with spesific `name`.
 - [`.cell(index)`]() - Scope the root of Element with `index`. 0 is a top of root-scope.
