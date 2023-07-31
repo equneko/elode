@@ -27,7 +27,7 @@ devs = [
     "rifkidocs",
     "RaffiHDMedia",
     "seonha14"
-].concat(Array(17).fill("none"));
+].concat(Array(16).fill("none"));
 
 use('div', 'h1', 'p', 'input', 'span', 'ul', 'li', 'img', {
     link: 'a.btn[href #]'
