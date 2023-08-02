@@ -4,7 +4,7 @@ Lets explore the whole of all things in Elode.js <br>
 that helps you to learn this experimental project
 
 ## Features
-- [`app`]() - Application tools for `View` and `Scope` management
+- [`app`](https://github.com/equneko/elode/blob/main/docs/reference/app.md) - Application tools for `View` and `Scope` management
 - [`hook`]() - Directive shortcut of repeative function ecosystem
 - [`init`]() - Including main tools `Action` of Elode.js for HTMLElement (DOM)
 - [`map`]() - Manipulate `Array` to be reactive as a listed `Child` with a container `Root`
