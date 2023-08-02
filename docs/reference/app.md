@@ -3,9 +3,9 @@ Application tools for `View` and `Scope` management
 
 - [Get Started](https://github.com/equneko/elode/edit/main/docs/reference/app.md#get-started)
 - [View](https://github.com/equneko/elode/edit/main/docs/reference/app.md#app)
-- [API]
-- [Example]
-- [Scope]
+- [API](https://github.com/equneko/elode/blob/main/docs/reference/app.md#api)
+- [Example](https://github.com/equneko/elode/blob/main/docs/reference/app.md#example)
+- [Scope](https://github.com/equneko/elode/blob/main/docs/reference/app.md#scope)
 
 ## Get Started
 `app` is the management tools for `View` and `Scope` purposes. <br>
