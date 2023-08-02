@@ -69,7 +69,7 @@ function GetStarted(prop) {
 
         div(
             link(".bg-violet.sha-test.shahover Get Started <span.fa.fa-play>" +
-                "[:github_link |aria-label Elode.js Github]"),
+                "[:link https://github.com/equneko/elode/blob/main/docs/learn/GetStarted.md|aria-label Elode.js Github]"),
 
             link(".nomenu.white.bg-dark.sha-test.shahover [:docs_link |aria-label Elode.js Documentation] <span.fa.fa-book> API Reference"), "br",
         ),
