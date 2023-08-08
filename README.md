@@ -66,9 +66,11 @@ Try Elode.js (online) with
 ![Firebase](https://img.icons8.com/?size=128&id=62452&format=png)
 ![jQuery](https://img.icons8.com/?size=128&id=40253&format=png)
 <img width="128" src="https://avatars.githubusercontent.com/u/9039821"></img>
+<img width="128" src="https://www.chartjs.org/img/chartjs-logo.svg"></img>
 - Firebase (Tested) https://firebase.google.com
 - jQuery (Tested) https://jquery.com
-- highlight.js (Tested) https://highlightjs.org/
+- highlight.js (Tested) https://highlightjs.org
+- chart.js (Tested) https://chartjs.org
 
 ## CSS Compabilities
 
