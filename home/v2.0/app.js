@@ -75,15 +75,21 @@ window.onscroll = function (e) {
     }
 }
 
+const HUTRI_LOGO = `<iframe src="https://drive.google.com/file/d/1AgTa93MTydf6b9BVrnaVyqTGHrzAaWqX/preview" width="640" height="480" allow="autoplay"></iframe>`;
+
 render(
     div("#app.center",
         div(".sticky[style z-index:1]",
             Promote = div(".promote.bg-violet.white",
-                p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
+                /* p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
                     "span Support this experimental project by ",
                     "a[:link https://github.com/equneko/elode/stargazers |aria-label Elode.js Github].white.hover <b Give a star at Github <span.fa.fa-github>>",
                     "span  or you can join our ",
-                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH |aria-label Elode.js Community].white.hover <b <span.fa.fa-comments> Community Team!>")
+                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH |aria-label Elode.js Community].white.hover <b <span.fa.fa-comments> Community Team!>") */
+
+                  // 78th Indonesia Independence Day
+                  p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
+                    "span Celebrating The 78th <b Indonesia> Independence Day! Terus Melaju Untuk Indonesia Maju!")
             ),
             Nav = NavBar({
                 title: "Elode.js"
@@ -91,6 +97,8 @@ render(
             SideBar = SideView(),
             LGooo = LetsGoo()
         ),
+
+        div(".center {html HUTRI_LOGO}"),
 
         GetView = GetStarted({
             image: Logo,
