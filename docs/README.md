@@ -5,8 +5,8 @@ that helps you to learn this experimental project
 
 ## Features
 - [`app`](https://github.com/equneko/elode/blob/main/docs/reference/app.md) - Application tools for `View` and `Scope` management
-- [`hook`]() - Directive shortcut of repeative function ecosystem
-- [`init`]() - Including main tools `Action` of Elode.js for HTMLElement (DOM)
+- [`hook`](https://github.com/equneko/elode/blob/main/docs/reference/hook.md) - Directive shortcut of repeative function ecosystem
+- [`init`](https://github.com/equneko/elode/blob/main/docs/reference/init.md) - Including main tools `Action` of Elode.js for HTMLElement (DOM)
 - [`map`]() - Manipulate `Array` to be reactive as a listed `Child` with a container `Root`
 - [`ref`]() - Reference do reactive changes with embedding all of scoped `Element`
 - [`render`]() - Global rendering represents `<body></body>` as a `Root`
