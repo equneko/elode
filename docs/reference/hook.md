@@ -1,7 +1,7 @@
 # Hook
 Directive shortcut of repeative function ecosystem
-- [Get Started](https://github.com/equneko/elode/edit/main/docs/reference/hook.md#get-started)
-- [Declaration](https://github.com/equneko/elode/edit/main/docs/reference/hook.md#declaration)
+- [Get Started](https://github.com/equneko/elode/blob/main/docs/reference/hook.md#get-started)
+- [Declaration](https://github.com/equneko/elode/blob/main/docs/reference/hook.md#declaration)
 - [Usagement](https://github.com/equneko/elode/blob/main/docs/reference/hook.md#usagement)
 - [API](https://github.com/equneko/elode/blob/main/docs/reference/hook.md#api)
 - [Builtins](https://github.com/equneko/elode/blob/main/docs/reference/hook.md#builtins)
