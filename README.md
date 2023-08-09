@@ -2,16 +2,20 @@
  <img width="100" src="https://github.com/equneko/elode/blob/main/res/images/logo.png"></img>
 </p>
  <h1 align="center">Elode.js - A Unique Way Web Development</h1>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Experimental%20Project-black"/>
+<img src="https://img.shields.io/badge/Unique-purple"/>
+<img src="https://img.shields.io/badge/Declarative-red"/>
+<img src="https://img.shields.io/badge/Lightweight-yellow"/>
+<img src="https://img.shields.io/badge/Reactive-blue"/>
+<img src="https://img.shields.io/badge/Front%20End-green"/>
+</p>
   
 **ELODE** (**EL**ement **O**n **DE**velopment) is a unique javascript library/framework for creating, composing and rendering **HTML Element (DOM)** in a unique way.
 Based on **JavaScript ES5 (EcmaScript 2009)** that can support old web browsers and also support with other javascript libraries/frameworks
 
-[![](https://img.shields.io/badge/Experimental%20Project-black)]()
-[![](https://img.shields.io/badge/Unique-purple)]()
-[![](https://img.shields.io/badge/Declarative-red)]()
-[![](https://img.shields.io/badge/Lightweight-yellow)]()
-[![](https://img.shields.io/badge/Reactive-blue)]()
-[![](https://img.shields.io/badge/Front%20End-green)]()
+
 
 ## https://elode.js.org
 <img width="800" src="https://github.com/equneko/elode/blob/main/res/images/homepage.png"/>
