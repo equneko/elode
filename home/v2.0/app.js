@@ -1,6 +1,6 @@
 const { app, use, ref, hook, init, render, xss } = Elode;
 
-const Logo = "res/images/logo.png",
+const Logo = "res/images/HUTRI78.png",
       NavLinks = [
     "[:docs_link ][aria-label Elode.js Documentation]Learn",
     "[:docs_link ][aria-label Elode.js Documentation]Docs",
@@ -75,8 +75,6 @@ window.onscroll = function (e) {
     }
 }
 
-const HUTRI_LOGO = `<iframe src="https://drive.google.com/file/d/1AgTa93MTydf6b9BVrnaVyqTGHrzAaWqX/preview" width="640" height="480" allow="autoplay"></iframe>`;
-
 render(
     div("#app.center",
         div(".sticky[style z-index:1]",
@@ -97,8 +95,6 @@ render(
             SideBar = SideView(),
             LGooo = LetsGoo()
         ),
-
-        div(".center {html HUTRI_LOGO}"),
 
         GetView = GetStarted({
             image: Logo,
