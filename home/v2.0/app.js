@@ -269,7 +269,7 @@ render(
 
     Footer = div("#footer.content.center.[style padding:3em 0em]",
         p(".gray © 2022 - 2023 <b Elode.js> - Experimental Project."),
-        p(".gray Open Source - Licensed under the <b MIT Licence>"),
+        p(".gray Open Source - Licensed under the <b MIT License>"),
 
         "br",
         [
