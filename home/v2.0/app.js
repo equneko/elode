@@ -1,6 +1,6 @@
 const { app, use, ref, hook, init, render, xss } = Elode;
 
-const Logo = "res/images/HUTRI78.png",
+const Logo = "res/images/logo.png",
       NavLinks = [
     "[:docs_link ][aria-label Elode.js Documentation]Learn",
     "[:docs_link ][aria-label Elode.js Documentation]Docs",
@@ -79,15 +79,15 @@ render(
     div("#app.center",
         div(".sticky[style z-index:1]",
             Promote = div(".promote.bg-violet.white",
-                /* p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
+                  p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
                     "span Support this experimental project by ",
                     "a[:link https://github.com/equneko/elode/stargazers |aria-label Elode.js Github].white.hover <b Give a star at Github <span.fa.fa-github>>",
                     "span  or you can join our ",
-                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH |aria-label Elode.js Community].white.hover <b <span.fa.fa-comments> Community Team!>") */
+                    "a[:link https://chat.whatsapp.com/GnTCmu2sjGlGJs2cnt4GnH |aria-label Elode.js Community].white.hover <b <span.fa.fa-comments> Community Team!>")
 
-                  // 78th Indonesia Independence Day
+                  /* 78th Indonesia Independence Day
                   p(".center[style margin:0; padding:0.7em 0em;font-size:10pt]",
-                    "span Celebrating The 78th <b Indonesia> Independence Day! Terus Melaju Untuk Indonesia Maju!")
+                    "span Celebrating The 78th <b Indonesia> Independence Day! Terus Melaju Untuk Indonesia Maju!") */
             ),
             Nav = NavBar({
                 title: "Elode.js"
