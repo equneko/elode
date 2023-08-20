@@ -230,8 +230,8 @@ render(
 How about to using **Elode.js** now? First, you need to learn more about this library!
 So, where to start? well, let's view this actions below. You can choice to start from:
 
-- [Get Started](https://github.com/equneko/elode/blob/main/docs/get-started.md) (Coming Soon)
-- [Read Documentation](https://github.com/equneko/elode/tree/main/docs) (Coming Soon)
+- [Get Started](https://github.com/equneko/elode/blob/main/docs/learn/GetStarted.md)
+- [Read Documentation](https://github.com/equneko/elode/tree/main/docs)
 - [Learn Example](https://github.com/equneko/elode/tree/main/example)
 
 # Icon Resources By [Icons8](https://icons8.com)
