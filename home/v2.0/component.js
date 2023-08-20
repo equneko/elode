@@ -60,7 +60,7 @@ function NavBar(prop) {
 
 function GetStarted(prop) {
     return div(".ctr.center[@fade_in 500 | style margin-top:125px]",
-        "img.logo[src " + prop.image + "| width 480 | alt Elode.js Logo]",
+        "img.logo[src " + prop.image + "| width 128 | alt Elode.js Logo]",
 
         h1(".bold.large.dark.m0 " + prop.title),
         p(".medium.gray " + prop.subtext),
