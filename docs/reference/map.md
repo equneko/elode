@@ -15,3 +15,5 @@ that's can be Update and Noticed every change on the Array data that was changed
   let Frameworks = ['React', 'Vue', 'Angular'];
   const MyJSMap = map("ul#MyJSMap", Frameworks, (child) => li(child));
 ```
+Map's actually extended Array.map(fn) on the Elode.js List Structures that was modified with Reactive. <br>
+The 
