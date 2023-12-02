@@ -19,6 +19,10 @@ that helps you to learn this experimental project
 - [`attribute`]() - Attribute data binding inside HTML-Query strings
 - [`property`]() - Property data binding with `HTMLPrototypes` DOM manipulation
 
+## Component
+- [`Manifold`]() - Loading template with CSS space
+- [`Suspense`]() - Fallback view while fetch await data
+
 ## Reactive
 - [`global`]() - Global reactive with JavaScript global variables
 - [`self`]() - Self reactive using `Object` inside `Element` DOM prototypes
@@ -78,7 +82,3 @@ that helps you to learn this experimental project
 - [`for`]() - Each array becomes map of `Element`
 - [`once`]() - Once reactive change, no more update
 - [`delay`]() - Do something with delay time binding
-
-## Extra
-- [`Manifold`]() - Loading template with CSS space
-- [`Suspense`]() - Fallback view while fetch await data
